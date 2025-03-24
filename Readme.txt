@@ -3,7 +3,6 @@
 
 Welcome to my portfolio repository! I'm Jaskaran Singh, a Mobile App Developer with over 4 years of experience specializing in Android and Flutter development. This project hosts my personal portfolio website, showcasing my skills, experience, and projects.
 
-Live Demo: [Insert URL here once hosted, e.g., GitHub Pages or custom domain]
 
 *ABOUT ME*
 ----------
@@ -68,8 +67,8 @@ To run this portfolio locally:
 
 *Installation:*
 1. Clone the repository:
-   git clone https://github.com/JaskaranChana/[your-repo-name].git
-   cd [your-repo-name]
+   git clone https://github.com/JaskaranChana/portfolio.git
+   cd portfolio
 2. Open the site:
    - Directly in a browser: open index.html
    - Or via a local server:
