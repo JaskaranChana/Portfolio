@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Payplus - Merchant Payment Application - Jaskaran Singh</title>
+  <meta content="Details of Payplus project by Jaskaran Singh" name="description">
+  <meta content="Kotlin, Flutter, Material Design, Mobile Development, Payment App" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f4f6f9;
+      color: #333;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .project-hero {
+      position: relative;
+      background: url('assets/img/mobiquitypaybusiness.jpeg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 60px;
+    }
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .project-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .project-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .project-hero p {
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+    .project-details {
+      padding: 80px 0;
+      background-color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      margin: 0 20px 60px;
+    }
+    .project-details .container {
+      max-width: 1000px;
+    }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 1rem;
+      margin-bottom: 40px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    .project-meta span strong {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    .description {
+      font-size: 1.15rem;
+      color: #34495e;
+      line-height: 1.9;
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 5px;
+    }
+    .key-features, .technologies {
+      margin-bottom: 50px;
+    }
+    .key-features h3, .technologies h3 {
+      font-size: 1.75rem;
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .key-features h3::after, .technologies h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 3px;
+      background: #3498db;
+    }
+    .key-features ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .key-features ul li {
+      position: relative;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      color: #343a40;
+      padding-left: 30px;
+      transition: transform 0.3s ease;
+    }
+    .key-features ul li:hover {
+      transform: translateX(10px);
+    }
+    .key-features ul li:before {
+      content: "\f058";
+      font-family: 'bootstrap-icons';
+      color: #3498db;
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+    .technologies .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .technologies .tech-stack span {
+      background: #2c3e50;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .technologies .tech-stack span:hover {
+      background: #3498db;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 30px;
+      background: #2c3e50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .back-btn i {
+      margin-right: 8px;
+    }
+    .back-btn:hover {
+      background: #3498db;
+      transform: translateX(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .footer {
+      padding: 20px 0;
+      background: #2c3e50;
+      color: #fff;
+    }
+    .footer .copyright p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="main">
+    <section class="project-hero" data-aos="fade-in">
+      <div class="container">
+        <h1>Payplus</h1>
+        <p>Enterprise-Grade Merchant Payments</p>
+      </div>
+    </section>
+
+    <section class="project-details section">
+      <div class="container" data-aos="fade-up">
+        <div class="project-meta" data-aos="fade-up" data-aos-delay="100">
+          <span><strong>Company:</strong> Mahindra Comviva</span>
+          <span><strong>Role:</strong> Senior Software Engineer</span>
+          <span><strong>Duration:</strong> Sep 2019 - Jan 2022</span>
+        </div>
+        <div class="description" data-aos="fade-up" data-aos-delay="200">
+          Payplus is an enterprise-grade merchant payment application designed to ensure seamless online payments with a unified checkout experience. Built with high-performance standards, it leverages Material Design and concurrency for an optimized user experience.
+        </div>
+        <div class="key-features" data-aos="fade-up" data-aos-delay="300">
+          <h3>Key Contributions</h3>
+          <ul>
+            <li>Delivered 20+ features for unified payment checkout.</li>
+            <li>Optimized memory and dependency injection for performance.</li>
+            <li>Collaborated with cross-functional teams for quality assurance.</li>
+            <li>Implemented Material Design for intuitive UI/UX.</li>
+            <li>Ensured scalability with microservices architecture.</li>
+          </ul>
+        </div>
+        <div class="technologies" data-aos="fade-up" data-aos-delay="400">
+          <h3>Technologies Used</h3>
+          <div class="tech-stack">
+            <span>Kotlin</span>
+            <span>Flutter</span>
+            <span>Material Design</span>
+            <span>Android SDK</span>
+          </div>
+        </div>
+        <a href="index.html#portfolio" class="back-btn" data-aos="fade-up" data-aos-delay="500"><i class="bi bi-arrow-left"></i> Back to Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Jaskaran Singh</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+  </script>
+</body>
+</html>

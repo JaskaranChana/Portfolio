@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Jaskaran Singh | Mobile App Developer | Android & Flutter Expert</title>
+  <meta content="Portfolio of Jaskaran Singh - Skilled Mobile App Developer Specializing in Android & Flutter" name="description">
+  <meta content="Mobile Developer, Android, Flutter, Kotlin, Jetpack Compose, Cross-Platform, MVVM, CI/CD" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    .experience-section, .services, .activities {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+    .experience-card, .service-box, .education-card, .portfolio-item {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-card:hover, .service-box:hover, .education-card:hover, .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .experience-card h4, .service-box h4, .education-card h4, .portfolio-item h3 {
+      color: #1a1a1a;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 0 0 15px 0;
+    }
+    .experience-card .company, .service-box p, .education-card .institution, .portfolio-item .company {
+      color: #495057;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0 0 15px 0;
+    }
+    .experience-card .date, .education-card .date {
+      color: #6b7280;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    .experience-card ul, .education-card ul, .activities ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0 0 20px 0;
+      color: #343a40;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .experience-card ul li, .education-card ul li, .activities ul li {
+      margin-bottom: 10px;
+    }
+    .experience-card ul li:before, .education-card ul li:before, .activities ul li:before {
+      content: "•";
+      color: #2c3e50;
+      font-size: 1.2rem;
+      margin-right: 12px;
+    }
+    .experience-card .key-technologies, .education-card .key-technologies {
+      margin: 15px 0;
+      color: #2c3e50;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .experience-card .key-technologies span {
+      background: #e9ecef;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .experience-card .key-technologies span:hover {
+      background: #2c3e50;
+      color: #ffffff;
+    }
+    .experience-card .view-projects, .education-card .view-projects, .portfolio-item .details-link {
+      display: inline-block;
+      padding: 10px 25px;
+      background: #2c3e50;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+      margin-top: 15px;
+    }
+    .experience-card .view-projects:hover, .education-card .view-projects:hover, .portfolio-item .details-link:hover {
+      background: #3498db;
+    }
+    .service-box {
+      text-align: center;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .service-box i {
+      font-size: 40px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .service-box h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+    }
+    .service-box p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      color: #343a40;
+      line-height: 1.6;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    #hero img {
+      filter: blur(2px);
+    }
+    .education-card .uni-logo, .experience-card .company-logo {
+      width: 120px; /* Increased size */
+      height: 120px; /* Increased size */
+      border-radius: 5px;
+      object-fit: contain;
+    }
+    .education-card .education-header, .experience-card .experience-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+    .portfolio {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+    .portfolio .section-title h2 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .portfolio .section-title p {
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 40px;
+    }
+    .portfolio .row {
+      row-gap: 20px;
+      column-gap: 10px;
+    }
+    .portfolio-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-left: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      padding: 15px;
+      max-width: 365px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+    .portfolio-item .project-info {
+      padding: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    .portfolio-item h3 {
+      font-size: 1.4rem;
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .portfolio-item .company {
+      font-size: 0.85rem;
+      color: #7f8c8d;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .portfolio-item .description {
+      font-size: 0.95rem;
+      color: #34495e;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+    .portfolio-item .highlights {
+      font-size: 0.9rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+    .portfolio-item .highlights strong {
+      color: #e74c3c;
+      font-weight: 700;
+    }
+    .portfolio-item .tech-stack {
+      font-size: 0.85rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .portfolio-item .tech-stack span {
+      background: #ecf0f1;
+      padding: 4px 10px;
+      border-radius: 5px;
+      border: 1px solid #2c3e50;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    .portfolio-item .tech-stack span:hover {
+      background: #2c3e50;
+      color: #fff;
+    }
+    .portfolio-item .project-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 15px;
+    }
+    .portfolio-item .project-links a {
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .portfolio-item .project-links .preview-link {
+      color: #2c3e50;
+      font-size: 1.2rem;
+    }
+    .portfolio-item .project-links .preview-link:hover {
+      color: #e74c3c;
+    }
+    .portfolio-item .project-links .preview-link i {
+      vertical-align: middle;
+    }
+    .portfolio-item .project-links .details-link {
+      padding: 8px 20px;
+      background: #2c3e50;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+    .portfolio-item .project-links .details-link:hover {
+      background: #e74c3c;
+    }
+    .php-email-form .form-group {
+      margin-bottom: 20px;
+    }
+    /* Professional Toolkit Styling */
+    .toolkit-container {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid #2c3e50;
+    }
+    .toolkit-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .toolkit-table th {
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #2c3e50;
+      padding: 10px 15px;
+      background: #e9ecef;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .toolkit-table td {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      color: #343a40;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .toolkit-table tr:last-child td {
+      border-bottom: none;
+    }
+    .toolkit-table td span {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="Jaskaran Singh - Mobile Developer" class="img-fluid rounded-circle" loading="lazy">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Jaskaran Singh</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://www.linkedin.com/in/jaskaranchana" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/JaskaranChana" class="github" target="_blank"><i class="bi bi-github"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i>About</a></li>
+        <li><a href="#services"><i class="bi bi-gear navicon"></i>What I Do</a></li>
+        <li><a href="#skills"><i class="bi bi-hdd-stack navicon"></i>Skills</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i>Summary</a></li>
+        <li><a href="#experience"><i class="bi bi-briefcase navicon"></i>Experience</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i>Projects</a></li>
+        <li><a href="#download"><i class="bi bi-download navicon"></i>Download Resume</a></li>
+        <li><a href="#activities"><i class="bi bi-star navicon"></i>Activities</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg.jpg" alt="Hero Background" data-aos="fade-in" loading="lazy">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Jaskaran Singh</h2>
+        <p>Transforming Ideas into Scalable Mobile Solutions</p>
+        <p><span class="typed" data-typed-items="Android, Flutter, Kotlin, Jetpack Compose, CI/CD">Android & Flutter Specialist</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>Driving Innovation in Mobile Development</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="Jaskaran Singh" loading="lazy">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Results-Driven Mobile App Developer with 4+ Years of Impact</h2>
+            <p>
+              I’m a passionate Android and Flutter developer with over 4 years of experience crafting secure, high-performance mobile applications. Specializing in Kotlin, Java, and cross-platform solutions, I’ve delivered scalable apps that enhance user engagement and align with industry best practices. My work has powered solutions with over 1M downloads, leveraging Agile methodologies, test-driven development, and cutting-edge tools like Jetpack Compose and CI/CD pipelines.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="mailto:jaskaran.chana1302@gmail.com">jaskaran.chana1302@gmail.com</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1 (437) 986-0298</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Toronto, ON, Canada</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong> <span><a href="https://www.linkedin.com/in/jaskaranchana" target="_blank">jaskaranchana</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span><a href="https://github.com/JaskaranChana" target="_blank">JaskaranChana</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Availability:</strong> <span>Open to Opportunities</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Do Section -->
+    <section id="services" class="services section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>What I Do</h2>
+        <p>Delivering Cutting-Edge Mobile Solutions</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-box" data-aos="zoom-in" data-aos-delay="200">
+              <i class="bi bi-phone"></i>
+              <h4>Expert Mobile Development</h4>
+              <p>Designing and building high-performance Android and Flutter applications tailored for scalability, security, and seamless user experiences.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-box" data-aos="zoom-in" data-aos-delay="300">
+              <i class="bi bi-brush"></i>
+              <h4>Modern UI/UX Solutions</h4>
+              <p>Creating intuitive, visually appealing interfaces with Jetpack Compose and Material Design to elevate user satisfaction and engagement.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-box" data-aos="zoom-in" data-aos-delay="400">
+              <i class="bi bi-shield-lock"></i>
+              <h4>Secure & Efficient Systems</h4>
+              <p>Implementing robust architectures, CI/CD pipelines, and cloud integrations to ensure reliable, secure, and optimized mobile ecosystems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section (Revamped Toolkit) -->
+    <section id="skills" class="skills section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Core Competencies</h2>
+        <p>Technical Expertise for High-Impact Solutions</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row skills-content skills-animation">
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>Kotlin</span> <i class="val">98%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Flutter & Dart</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Java</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>MVVM & Jetpack Compose</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>CI/CD (Jenkins, GitHub Actions)</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Testing (JUnit, Espresso)</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="mt-4" data-aos="fade-up">Technical Toolkit</h3>
+        <div class="toolkit-container mt-3" data-aos="fade-up" data-aos-delay="100">
+          <table class="toolkit-table">
+            <tr>
+              <th>Languages</th>
+              <td><span>Java</span><span>Kotlin</span><span>Dart</span><span>Python</span><span>C</span><span>C++</span><span>SQL</span><span>MATLAB</span></td>
+            </tr>
+            <tr>
+              <th>Architecture</th>
+              <td><span>MVVM</span><span>MVC</span><span>MVP</span><span>Client-Server</span><span>Modular</span></td>
+            </tr>
+            <tr>
+              <th>Frameworks</th>
+              <td><span>RESTful API</span><span>Flask</span><span>Flutter</span><span>Jetpack Compose</span></td>
+            </tr>
+            <tr>
+              <th>Testing/QA</th>
+              <td><span>JUnit</span><span>Espresso</span><span>Roboelectric</span><span>Appium</span><span>Selenium</span></td>
+            </tr>
+            <tr>
+              <th>Android</th>
+              <td><span>Material Design</span><span>Retrofit</span><span>Room</span><span>Data Binding</span><span>LiveData</span></td>
+            </tr>
+            <tr>
+              <th>Security</th>
+              <td><span>OAuth</span><span>Android Keystore</span><span>Data Encryption</span></td>
+            </tr>
+            <tr>
+              <th>Tools</th>
+              <td><span>SonarQube</span><span>Checkmarx</span><span>Postman</span><span>Jenkins</span><span>Firebase</span><span>MongoDB</span><span>PostgreSQL</span><span>AWS</span><span>Render</span><span>PubNub</span><span>Twilio</span></td>
+            </tr>
+            <tr>
+              <th>Collaboration</th>
+              <td><span>Git</span><span>GitHub</span><span>Bitbucket</span><span>JIRA</span><span>Confluence</span><span>Slack</span></td>
+            </tr>
+            <tr>
+              <th>AI/ML</th>
+              <td><span>TensorFlow</span><span>OpenCV</span><span>Reinforcement Learning</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="resume" class="resume section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Professional Summary</h2>
+        <p>A Journey of Impact in Mobile Development</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Jaskaran Singh</h4>
+              <p><em>A results-driven Mobile App Developer with over 4 years of experience, I specialize in building secure, high-performance Android and Flutter applications. My expertise in Kotlin, Java, and modern architectures like MVVM has driven scalable solutions for financial and digital platforms, achieving significant user engagement and performance gains.</em></p>
+              <ul>
+                <li>Toronto, ON, Canada</li>
+                <li>+1 (437) 986-0298</li>
+                <li><a href="mailto:jaskaran.chana1302@gmail.com">jaskaran.chana1302@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/jaskaranchana" target="_blank">linkedin.com/in/jaskaranchana</a></li>
+              </ul>
+            </div>
+            <h3 class="resume-title mt-5">Education</h3>
+            <div class="resume-item">
+              <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="education-header">
+                  <div class="header-details">
+                    <h4>Master of Applied Science in Electrical & Computer Engineering</h4>
+                    <p class="institution"><a href="https://www.uwindsor.ca" target="_blank">University of Windsor</a>, Canada</p>
+                    <p class="date">Sep 2022 - Dec 2023</p>
+                    <ul>
+                      <li>Advanced study in computer science and engineering methodologies.</li>
+                      <li>Thesis on mobile app optimization, exploring computer arithmetic and machine learning.</li>
+                    </ul>
+                  </div>
+                  <img src="assets/img/UwindsorLogo.jpg" alt="University of Windsor Logo" class="uni-logo" loading="lazy">
+                </div>
+              </div>
+              <div class="education-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="education-header">
+                  <div class="header-details">
+                    <h4>Bachelor of Technology in Electronics & Communication</h4>
+                    <p class="institution"><a href="https://www.nitj.ac.in" target="_blank">Dr. B.R. Ambedkar National Institute of Technology</a>, Jalandhar, India</p>
+                    <p class="date">Aug 2015 - May 2019</p>
+                    <ul>
+                      <li>Built a strong foundation in computer science and engineering principles.</li>
+                      <li>Developed projects in embedded systems and mobile technology.</li>
+                    </ul>
+                  </div>
+                  <img src="assets/img/NITJlogo.jpg" alt="NITJ Logo" class="uni-logo" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="experience-section">
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+        <h2>Professional Experience</h2>
+        <p>Delivering Excellence in Mobile Innovation</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="experience-header">
+                <div class="header-details">
+                  <h4>Advanced Coder - AI Training</h4>
+                  <p class="company"><a href="https://outlier.ai" target="_blank">Outlier</a>, Remote</p>
+                  <p class="date">Jul 2024 - Present</p>
+                </div>
+                <img src="assets/img/outlier-logo.jpeg" alt="Outlier Logo" class="company-logo" loading="lazy">
+              </div>
+              <ul>
+                <li>Optimized algorithms in Python, Kotlin, and Java for AI chatbot training, improving accuracy and scalability.</li>
+                <li>Designed advanced prompts and testing frameworks, reducing biases and enhancing model performance.</li>
+                <li>Conducted rigorous code reviews to ensure reliability and uphold industry standards.</li>
+              </ul>
+              <div class="key-technologies">
+                <strong>Technologies:</strong> <span>Python</span><span>Kotlin</span><span>Java</span><span>C++</span><span>C</span><span>Dart</span><span>Data Structures</span><span>Algorithms</span><span>Reinforcement Learning</span><span>Math</span><span>AI</span>
+              </div>
+            </div>
+            <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="experience-header">
+                <div class="header-details">
+                  <h4>Software Developer</h4>
+                  <p class="company"><a href="https://www.talentica.com" target="_blank">Talentica Software</a>, Pune, India</p>
+                  <p class="date">Jan 2022 - Jul 2022</p>
+                </div>
+                <img src="assets/img/talentica-logo.png" alt="Talentica Software Logo" class="company-logo" loading="lazy">
+              </div>
+              <ul>
+                <li>Led 20+ features for Rupeek App, boosting user adoption by 25% with MVVM architecture.</li>
+                <li>Integrated Firebase services, driving an 18% increase in installs and enhancing performance.</li>
+                <li>Optimized Flutter modules with Riverpod, achieving a 17% performance boost.</li>
+                <li>Migrated codebase from Kotlin to Flutter, streamlining cross-platform development.</li>
+              </ul>
+              <div class="key-technologies">
+                <strong>Technologies:</strong> <span>Kotlin</span><span>Flutter</span><span>App Indexing</span><span>Jetpack Compose</span><span>Firebase</span><span>Jenkins</span>
+              </div>
+              <a href="#portfolio" class="view-projects">View Rupeek App Project</a>
+            </div>
+            <div class="experience-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="experience-header">
+                <div class="header-details">
+                  <h4>Senior Software Engineer</h4>
+                  <p class="company"><a href="https://www.comviva.com" target="_blank">Mahindra Comviva</a>, Bangalore, India</p>
+                  <p class="date">Sep 2019 - Jan 2022</p>
+                </div>
+                <img src="assets/img/comviva-logo.png" alt="Mahindra Comviva Logo" class="company-logo" loading="lazy">
+              </div>
+              <ul>
+                <li>Developed 30+ features for Mobiquity Pay, reducing crashes by 20% with Kotlin Multiplatform.</li>
+                <li>Implemented FCM push notifications with deep linking, increasing engagement by 15%.</li>
+                <li>Drove PayPlus development with 20+ features, ensuring seamless payment checkout.</li>
+                <li>Enhanced security and code quality via Checkmarx audits and CI/CD pipelines.</li>
+              </ul>
+              <div class="key-technologies">
+                <strong>Technologies:</strong> <span>Kotlin</span><span>Java</span><span>Firebase</span><span>CI/CD</span><span>Android SDK</span><span>Jenkins</span><span>JIRA</span><span>RESTful API</span><span>Jetpack Compose</span><span>JUnit</span><span>Espresso</span><span>SonarQube</span><span>Git</span>
+              </div>
+              <a href="#portfolio" class="view-projects">View Mobiquity Pay Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Projects</h2>
+        <p>Showcasing Innovation and Impact</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="assets/img/Rupeek.jpeg" alt="Rupeek App" loading="lazy">
+            <div class="project-info">
+              <h3>Rupeek App</h3>
+              <p class="company">Talentica Software</p>
+              <p class="description">Gold loan platform with seamless user journey.</p>
+              <p class="highlights"><strong>25%</strong> adoption boost, <strong>18%</strong> install surge.</p>
+              <div class="tech-stack">
+                <span>Kotlin</span><span>Flutter</span><span>Java</span><span>Jenkins</span><span>Jetpack Compose</span><span>Firebase</span>
+              </div>
+              <div class="project-links">
+                <a href="assets/img/Rupeek.jpeg" class="preview-link glightbox" data-gallery="portfolio-gallery"><i class="bi bi-zoom-in"></i></a>
+                <a href="rupeek-details.html" class="details-link">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/img/mobiquitypay.jpeg" alt="Mobiquity Pay" loading="lazy">
+            <div class="project-info">
+              <h3>Mobiquity Pay</h3>
+              <p class="company">Mahindra Comviva</p>
+              <p class="description">Secure payment app for 1M+ transactions.</p>
+              <p class="highlights"><strong>20%</strong> crash reduction, <strong>15%</strong> engagement boost.</p>
+              <div class="tech-stack">
+                <span>Kotlin</span><span>Java</span><span>Firebase</span><span>CI/CD</span><span>Android SDK</span><span>Jenkins</span>
+              </div>
+              <div class="project-links">
+                <a href="assets/img/mobiquitypay.jpeg" class="preview-link glightbox" data-gallery="portfolio-gallery"><i class="bi bi-zoom-in"></i></a>
+                <a href="mobiquitypay-details.html" class="details-link">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="assets/img/lifecapture.jpeg" alt="Life-capture Notes" loading="lazy">
+            <div class="project-info">
+              <h3>Life-capture Notes</h3>
+              <p class="company">Independent Project</p>
+              <p class="description">AI-powered note-taking across platforms.</p>
+              <p class="highlights"><strong>Enhanced</strong> user experience.</p>
+              <div class="tech-stack">
+                <span>Flutter</span><span>Python</span><span>AWS</span><span>SQLite</span><span>Flask</span><span>PostgreSQL</span><span>Render</span>
+              </div>
+              <div class="project-links">
+                <a href="assets/img/lifecapture.jpeg" class="preview-link glightbox" data-gallery="portfolio-gallery"><i class="bi bi-zoom-in"></i></a>
+                <a href="lifecapture-details.html" class="details-link">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="zoom-in" data-aos-delay="400">
+            <img src="assets/img/driverdrowsinessdetection.jpeg" alt="Anti-Drowsiness Driver Assistant" loading="lazy">
+            <div class="project-info">
+              <h3>Driver Safety Assistant</h3>
+              <p class="company">Independent Project</p>
+              <p class="description">AI-driven road safety solution.</p>
+              <p class="highlights"><strong>25%</strong> risk reduction.</p>
+              <div class="tech-stack">
+                <span>Python</span><span>OpenCV</span><span>TensorFlow</span><span>MySQL</span><span>Flask</span>
+              </div>
+              <div class="project-links">
+                <a href="assets/img/driverdrowsinessdetection.jpeg" class="preview-link glightbox" data-gallery="portfolio-gallery"><i class="bi bi-zoom-in"></i></a>
+                <a href="driverdrowsiness-details.html" class="details-link">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="zoom-in" data-aos-delay="500">
+            <img src="assets/img/VOD.jpg" alt="Video on Demand Desktop App" loading="lazy">
+            <div class="project-info">
+              <h3>Video on Demand</h3>
+              <p class="company">Independent Project</p>
+              <p class="description">Low-latency streaming desktop app.</p>
+              <p class="highlights"><strong>Optimized</strong> playback.</p>
+              <div class="tech-stack">
+                <span>Java</span><span>Socket Programming</span><span>MySQL</span><span>MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="assets/img/VOD.jpg" class="preview-link glightbox" data-gallery="portfolio-gallery"><i class="bi bi-zoom-in"></i></a>
+                <a href="vod-details.html" class="details-link">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="zoom-in" data-aos-delay="600">
+            <img src="assets/img/IOT.jpg" alt="IoT Smart Home System" loading="lazy">
+            <div class="project-info">
+              <h3>IoT Smart Home</h3>
+              <p class="company">Independent Project</p>
+              <p class="description">Scalable home automation system.</p>
+              <p class="highlights"><strong>Real-time</strong> control.</p>
+              <div class="tech-stack">
+                <span>Python</span><span>Raspberry Pi</span><span>MongoDB</span><span>PubNub</span><span>Twilio</span>
+              </div>
+              <div class="project-links">
+                <a href="assets/img/IOT.jpg" class="preview-link glightbox" data-gallery="portfolio-gallery"><i class="bi bi-zoom-in"></i></a>
+                <a href="iot-details.html" class="details-link">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Resume Section -->
+    <section id="download" class="download section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Download Resume</h2>
+        <p>Explore My Full Experience</p>
+      </div>
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+        <a href="assets/img/files/JaskaranSingh.pdf" class="btn btn-get-resume" download="Jaskaran_Singh_Resume.pdf">
+          <i class="bi bi-download me-2"></i>Get My Resume
+        </a>
+      </div>
+    </section>
+
+    <!-- Extracurricular Activities Section -->
+    <section id="activities" class="activities section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Activities</h2>
+        <p>Beyond the Code</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <ul class="list-unstyled">
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Basketball Team – Represented university in tournaments.</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Arts Society – Organized design workshops.</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Nazm Poetry – Perform at local events.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Let’s Collaborate on Your Next Project</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>Toronto, ON, Canada</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+1 (437) 986-0298</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p><a href="mailto:jaskaran.chana1302@gmail.com">jaskaran.chana1302@gmail.com</a></p>
+                </div>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184551.8085786429!2d-79.51814171731027!3d43.718403989613684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Thanks for reaching out! I’ll respond soon.</div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Jaskaran Singh</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        Designed by Jaskaran Singh
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- AOS Initialization -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+
+</body>
+</html>
