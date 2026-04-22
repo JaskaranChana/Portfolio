@@ -174,23 +174,55 @@ body::after {
 
 /* ── LIGHT THEME ── */
 body.light {
-  --bg: #f6f7f9;
-  --bg-2: #ffffff;
-  --bg-3: #eef0f3;
-  --border: #dcdfe4;
-  --text: #0f172a;
-  --text-2: #475569;
-  --text-3: #94a3b8;
-  --accent: #0891b2;
-  --accent-2: #38bdf8;
-  --accent-rgb: 8,145,178;
-  --accent-dim: rgba(8,145,178,0.07);
-  --accent-border: rgba(8,145,178,0.25);
-  --accent-contrast: #effbff;
+  --bg: #f4f1ea;
+  --bg-2: #fffdf8;
+  --bg-3: #ebe5d9;
+  --border: #d8cdbb;
+  --text: #16202a;
+  --text-2: #4f5b61;
+  --text-3: #7a7165;
+  --accent: #0f766e;
+  --accent-2: #b7791f;
+  --accent-rgb: 15,118,110;
+  --accent-dim: rgba(15,118,110,0.08);
+  --accent-border: rgba(15,118,110,0.24);
+  --accent-contrast: #f8fffc;
 }
-body.light::after { opacity: 0.018; }
-body.light .sidebar { background: rgba(255,255,255,0.92); }
-body.light .mobile-header { background: rgba(255,255,255,0.95); }
+body.light {
+  background:
+    radial-gradient(980px circle at 6% 8%, rgba(183,121,31,0.12), transparent 38%),
+    radial-gradient(760px circle at 94% 10%, rgba(15,118,110,0.12), transparent 34%),
+    radial-gradient(720px circle at 48% 100%, rgba(46,72,88,0.08), transparent 40%),
+    var(--bg);
+}
+body.light::before {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.5), transparent 18%, transparent 82%, rgba(183,121,31,0.06)),
+    linear-gradient(180deg, transparent, rgba(15,118,110,0.045), transparent),
+    radial-gradient(800px circle at 50% -10%, rgba(183,121,31,0.08), transparent 60%);
+}
+body.light::after { opacity: 0.012; }
+body.light .sidebar {
+  background:
+    linear-gradient(180deg, rgba(255,253,248,0.94), rgba(248,244,235,0.9)),
+    linear-gradient(160deg, rgba(15,118,110,0.08), transparent 34%);
+  box-shadow: 18px 0 46px rgba(53,45,32,0.08);
+}
+body.light .mobile-header { background: rgba(255,253,248,0.94); }
+body.light .sidebar-name {
+  background: linear-gradient(135deg, #20303a 8%, #0f766e 54%, #8a5a16 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .sidebar-logo {
+  color: #0f766e;
+}
+body.light .sidebar-role,
+body.light .sidebar-role2,
+body.light .greeting {
+  color: #48565d;
+}
 body.light .hero-panel,
 body.light .hero-signal-wall,
 body.light .story-lens,
@@ -203,8 +235,10 @@ body.light .faq-item,
 body.light #exp-modal-panel,
 body.light #project-modal-panel,
 body.light #tldr-panel {
-  background: rgba(255,255,255,0.96);
-  box-shadow: 0 18px 42px rgba(15,23,42,0.08);
+  background:
+    linear-gradient(180deg, rgba(255,253,248,0.98), rgba(250,246,238,0.96));
+  border-color: rgba(112,96,72,0.22);
+  box-shadow: 0 26px 62px rgba(70,55,31,0.14), 0 1px 0 rgba(255,255,255,0.82) inset;
 }
 body.light .section-title,
 body.light .contact-headline,
@@ -217,9 +251,9 @@ body.light .project-modal-title,
 body.light .writing-title,
 body.light .now-title,
 body.light .faq-q span:first-child {
-  color: #0f172a;
+  color: #16202a;
 }
-body.light .section-watermark { color: rgba(15,23,42,0.05); }
+body.light .section-watermark { color: rgba(112,96,72,0.08); }
 body.light .section-line,
 body.light .nav-indicator,
 body.light .exp-case-metric,
@@ -234,7 +268,7 @@ body.light .availability-board,
 body.light .mini-term,
 body.light .contact-cta,
 body.light .writing-item::before {
-  border-color: #d8dee8;
+  border-color: rgba(124,108,82,0.25);
 }
 body.light .story-panel-copy,
 body.light .story-point p,
@@ -251,7 +285,7 @@ body.light .project-modal-copy,
 body.light .project-modal-note,
 body.light .project-modal-list li,
 body.light .exp-modal-list li {
-  color: #334155;
+  color: #334047;
 }
 body.light .project-filter,
 body.light .writing-filter,
@@ -261,13 +295,45 @@ body.light .writing-action,
 body.light .hero-meta-chip,
 body.light .hero-action,
 body.light .app-dock {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,253,248,0.94);
+  border-color: rgba(124,108,82,0.24);
 }
-body.light .proj-img img { filter: brightness(0.92) grayscale(0%); }
+body.light .hero-proof-card,
+body.light .hero-signal,
+body.light .story-panel,
+body.light .story-point,
+body.light .exp-case-metric,
+body.light .project-modal-card,
+body.light .exp-modal-card,
+body.light .stack-row,
+body.light .availability-board,
+body.light .mini-term,
+body.light .contact-cta {
+  background: rgba(255,250,240,0.62);
+}
+body.light .hero-action.primary {
+  background: linear-gradient(135deg, #0f766e, #2aa198 55%, #b7791f);
+  color: #fffdf8;
+  box-shadow: 0 16px 34px rgba(15,118,110,0.18);
+}
+body.light .hero-meta-chip strong,
+body.light .section-num,
+body.light .hero-kicker,
+body.light .story-kicker,
+body.light .project-kicker,
+body.light .timeline-lab-kicker,
+body.light .service-kicker,
+body.light .now-label,
+body.light .writing-date,
+body.light .proj-num,
+body.light .exp-case-year {
+  color: var(--accent);
+}
+body.light .proj-img img { filter: brightness(0.98) saturate(1.04); }
 body.light .contact-meta a,
 body.light .resume-link,
 body.light .proj-link,
-body.light .social-link { color: #475569; }
+body.light .social-link { color: #4f5b61; }
 body.light .project-filter.active,
 body.light .project-filter:hover,
 body.light .writing-filter.active,
@@ -4939,7 +5005,7 @@ body.light .project-orbit-card {
         </div>
         <div class="pitch-card">
           <div class="pitch-title">Copy-ready outreach intro</div>
-          <p id="recruiter-pitch">Jaskaran is a Toronto-based Senior Android Developer with 4+ years shipping fintech mobile apps, plus current code-model evaluation and RLHF work at Outlier. He is strongest where Kotlin, Jetpack Compose, release quality and production trust all meet.</p>
+          <p id="recruiter-pitch">Jaskaran is a Toronto-based Senior Android Developer with 5 years shipping fintech mobile apps, plus current code-model evaluation and RLHF work at Outlier. He is strongest where Kotlin, Jetpack Compose, release quality and production trust all meet.</p>
           <div class="recruiter-actions">
             <button class="recruiter-action" id="copy-pitch" data-magnetic>Copy pitch</button>
             <button class="recruiter-action" id="highlight-proof" data-magnetic>Highlight proof</button>
@@ -5049,10 +5115,10 @@ body.light .project-orbit-card {
               <div class="hero-kicker">Jaskaran Singh</div>
               <h1 class="hero-headline">Senior Android Engineer.<span>Fintech, mobile platforms, and applied AI.</span></h1>
               <p class="hero-copy">
-                Toronto-based mobile engineer with 4+ years in fintech, Kotlin/Compose depth, and current code-model evaluation work.
+                Toronto-based mobile engineer with 5 years in fintech, Kotlin/Compose depth, and current code-model evaluation work.
               </p>
               <div class="hero-inline-meta">
-                <span class="hero-meta-chip"><strong>4+</strong> years</span>
+                <span class="hero-meta-chip"><strong>5</strong> years</span>
                 <span class="hero-meta-chip"><strong>30+</strong> features</span>
                 <span class="hero-meta-chip"><strong>Open</strong> senior roles</span>
               </div>
@@ -5124,7 +5190,7 @@ body.light .project-orbit-card {
         <div class="about-bio">
           <p class="sr sr-d1">
             I build Android applications that people trust with their money. Over the
-            last four-plus years I've shipped production mobile software at <strong>Comviva</strong>
+            last five years I've shipped production mobile software at <strong>Comviva</strong>
             and <strong>Rupeek</strong> — across mobile banking, merchant payments, and gold-loan
             product flows — and contributed to the release engineering, performance and
             security practices those products depend on.
@@ -5159,7 +5225,7 @@ body.light .project-orbit-card {
       <!-- STATS BAR -->
       <div class="stats-bar sr">
         <div class="stat-item">
-          <span class="stat-number" data-target="4" data-suffix="+">0</span>
+          <span class="stat-number" data-target="5">0</span>
           <span class="stat-label">Years<br>Experience</span>
         </div>
         <div class="stat-item">
@@ -5185,7 +5251,7 @@ body.light .project-orbit-card {
         <div class="impact-grid" aria-label="Career impact metrics">
           <div class="impact-card">
             <span class="impact-card-label">Reach</span>
-            <strong class="impact-card-value">4+</strong>
+            <strong class="impact-card-value">5</strong>
             <div class="impact-card-copy">Years of professional Android and mobile product work.</div>
           </div>
           <div class="impact-card">
@@ -5260,7 +5326,7 @@ body.light .project-orbit-card {
             </div>
 
             <div class="story-metrics" id="story-metrics">
-              <div class="story-metric"><b id="story-metric-1">4+ yrs</b><span id="story-metric-1-label">Professional mobile engineering experience</span></div>
+              <div class="story-metric"><b id="story-metric-1">5 yrs</b><span id="story-metric-1-label">Professional mobile engineering experience</span></div>
               <div class="story-metric"><b id="story-metric-2">50+</b><span id="story-metric-2-label">Features across Rupeek, Mobiquity Pay, and PayPlus</span></div>
               <div class="story-metric"><b id="story-metric-3">Toronto</b><span id="story-metric-3-label">Open to hybrid, remote, and senior roles</span></div>
             </div>
@@ -5746,7 +5812,7 @@ body.light .project-orbit-card {
             <span class="stack-label-count">8 tools</span>
           </div>
           <ul class="stack-list">
-            <li class="stack-row primary"><span class="tool">Git, GitHub, Bitbucket</span>    <span class="meta">4+ yrs · daily</span></li>
+            <li class="stack-row primary"><span class="tool">Git, GitHub, Bitbucket</span>    <span class="meta">5 yrs · daily</span></li>
             <li class="stack-row primary"><span class="tool">Jenkins CI/CD</span>             <span class="meta">4 yrs</span></li>
             <li class="stack-row"><span class="tool">SonarQube, Checkmarx</span>              <span class="meta">3 yrs</span></li>
             <li class="stack-row"><span class="tool">Firebase Crashlytics</span>              <span class="meta">4 yrs</span></li>
@@ -6091,7 +6157,7 @@ body.light .project-orbit-card {
       <button class="tldr-close" id="tldr-close" aria-label="Close profile summary">×</button>
     </div>
     <ul class="tldr-list" id="tldr-list">
-      <li>Senior Android Developer in Toronto with 4+ years shipping fintech mobile applications.</li>
+      <li>Senior Android Developer in Toronto with 5 years shipping fintech mobile applications.</li>
       <li>Kotlin, Jetpack Compose, Flutter, MVVM, CI/CD, Firebase, Jenkins, SonarQube and Checkmarx.</li>
       <li>Current Advanced Coder - AI Training work: code-model prompting, RLHF-oriented review, testing, and failure analysis.</li>
       <li>Strongest fit: senior mobile roles where reliability, architecture and production trust matter.</li>
@@ -6818,7 +6884,7 @@ window.addEventListener('load', () => {
   if (stackSearch) stackSearch.addEventListener('input', applyStackSearch);
   applyStackSearch();
 
-  const impactText = 'Jaskaran Singh impact snapshot: 4+ years of professional Android/mobile work, 30+ Mobiquity Pay features, 20+ Rupeek features, and 20% crash reduction reported in Mobiquity Pay delivery work.';
+  const impactText = 'Jaskaran Singh impact snapshot: 5 years of professional Android/mobile work, 30+ Mobiquity Pay features, 20+ Rupeek features, and 20% crash reduction reported in Mobiquity Pay delivery work.';
   const copyImpact = document.getElementById('copy-impact');
   if (copyImpact) {
     copyImpact.addEventListener('click', async () => {
@@ -7176,7 +7242,7 @@ window.addEventListener('load', () => {
         ['What kind of team benefits most', 'Any product organization where reliability, delivery pace, and thoughtful technical judgment matter as much as feature velocity.']
       ],
       metrics: [
-        ['4+ yrs', 'Professional mobile engineering experience'],
+        ['5 yrs', 'Professional mobile engineering experience'],
         ['50+', 'Features across Rupeek, Mobiquity Pay, and PayPlus'],
         ['Toronto', 'Open to hybrid, remote, and senior roles']
       ]
@@ -7447,7 +7513,7 @@ window.addEventListener('load', () => {
         '<strong>30+ Android features shipped</strong> with Kotlin, MVVM, Dagger, Jenkins and feature flags.',
         '<strong>20+ Compose features</strong> for a gold-loan flow with measurable install-rate gains.',
       ],
-      pitch: 'Jaskaran is a Toronto-based Senior Android Developer with 4+ years shipping fintech mobile apps, plus current code-model evaluation and RLHF work at Outlier. He is strongest where Kotlin, Jetpack Compose, release quality and production trust all meet.',
+      pitch: 'Jaskaran is a Toronto-based Senior Android Developer with 5 years shipping fintech mobile apps, plus current code-model evaluation and RLHF work at Outlier. He is strongest where Kotlin, Jetpack Compose, release quality and production trust all meet.',
       terms: ['kotlin', 'jetpack compose', 'android sdk', 'coroutines', 'retrofit', 'room', 'mvvm', 'dagger', 'espresso', 'flutter'],
     },
     ai: {
@@ -7458,7 +7524,7 @@ window.addEventListener('load', () => {
         '<strong>LLM fine-tuning and RLHF experience</strong> across code-generation reasoning tasks.',
         '<strong>Mobile AI direction</strong> with on-device inference experiments and Compose UX thinking.',
       ],
-      pitch: 'Jaskaran brings a practical Android plus AI profile: 4+ years shipping mobile products, current code-model training and evaluation work, and an interest in on-device AI experiences for real users.',
+      pitch: 'Jaskaran brings a practical Android plus AI profile: 5 years shipping mobile products, current code-model training and evaluation work, and an interest in on-device AI experiences for real users.',
       terms: ['llm', 'rlhf', 'prompt', 'evaluation', 'python', 'computer vision', 'opencv', 'gemini', 'ai', 'flutter'],
     },
     platform: {
