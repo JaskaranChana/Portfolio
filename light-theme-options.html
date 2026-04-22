@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Light Theme Options</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #eef1f5;
+      color: #101828;
+      padding: 34px;
+    }
+    .wrap { max-width: 1480px; margin: 0 auto; }
+    .intro { margin-bottom: 26px; }
+    .intro h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 40px;
+      letter-spacing: -0.03em;
+    }
+    .intro p {
+      margin: 0;
+      color: #667085;
+      line-height: 1.6;
+      max-width: 760px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .option {
+      --page: #f7f8fa;
+      --panel: #ffffff;
+      --panel2: #f3f5f8;
+      --sidebar: #111827;
+      --sidebar2: #1f2937;
+      --text: #111827;
+      --muted: #667085;
+      --soft: #98a2b3;
+      --accent: #315b8c;
+      --accent2: #6f7f86;
+      --border: #d9dee7;
+      --shadow: rgba(16, 24, 40, 0.1);
+      min-height: 500px;
+      border-radius: 18px;
+      padding: 16px;
+      background:
+        radial-gradient(650px circle at 82% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 42%),
+        var(--page);
+      border: 1px solid color-mix(in srgb, var(--border) 84%, white 16%);
+      box-shadow: 0 24px 70px rgba(16,24,40,0.12);
+      overflow: hidden;
+    }
+    .option.o1 {
+      --page: #f6f7f9;
+      --panel: #ffffff;
+      --panel2: #eef2f5;
+      --sidebar: #151f2b;
+      --sidebar2: #223040;
+      --text: #17212f;
+      --muted: #5f6b7a;
+      --soft: #8a96a5;
+      --accent: #3f6478;
+      --accent2: #62746c;
+      --border: #d7dde3;
+    }
+    .option.o2 {
+      --page: #f8f6f1;
+      --panel: #fffdf8;
+      --panel2: #f0ece3;
+      --sidebar: #1c211f;
+      --sidebar2: #2f3732;
+      --text: #242724;
+      --muted: #6f7169;
+      --soft: #9b9a8f;
+      --accent: #596f5f;
+      --accent2: #8a7456;
+      --border: #ded7ca;
+    }
+    .option.o3 {
+      --page: #f5f7f8;
+      --panel: #ffffff;
+      --panel2: #edf3f4;
+      --sidebar: #102024;
+      --sidebar2: #1a3338;
+      --text: #122126;
+      --muted: #5f7075;
+      --soft: #8aa0a6;
+      --accent: #24606d;
+      --accent2: #54766c;
+      --border: #d3dcdf;
+    }
+    .option.o4 {
+      --page: #f7f8fb;
+      --panel: #ffffff;
+      --panel2: #eef1f7;
+      --sidebar: #101827;
+      --sidebar2: #1e293b;
+      --text: #101828;
+      --muted: #667085;
+      --soft: #98a2b3;
+      --accent: #364f7a;
+      --accent2: #687083;
+      --border: #d6dbe6;
+    }
+    .label {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .label h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .label p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .chips { display: flex; gap: 6px; }
+    .swatch {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .mock {
+      display: grid;
+      grid-template-columns: 168px 1fr;
+      min-height: 405px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.72), transparent 48%),
+        var(--page);
+    }
+    .side {
+      padding: 24px 20px;
+      background:
+        radial-gradient(260px circle at 24% 6%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 48%),
+        linear-gradient(180deg, var(--sidebar), var(--sidebar2));
+      color: rgba(255,255,255,0.76);
+    }
+    .logo {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.84);
+      margin-bottom: 28px;
+    }
+    .name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      line-height: 1.05;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .role {
+      font-size: 12px;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 34px;
+    }
+    .nav {
+      display: grid;
+      gap: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .nav span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.66);
+    }
+    .nav span::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+    .nav span.active { color: white; }
+    .nav span.active::before {
+      background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 35%, white 65%), color-mix(in srgb, var(--accent2) 45%, white 55%));
+      width: 36px;
+    }
+    .main {
+      padding: 34px 38px;
+      background:
+        radial-gradient(420px circle at 88% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 48%),
+        var(--page);
+    }
+    .heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .num {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+    .title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      letter-spacing: -0.035em;
+      color: var(--text);
+    }
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .btns { display: flex; gap: 8px; }
+    .btn {
+      height: 31px;
+      padding: 0 12px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .btn.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: transparent;
+      color: white;
+    }
+    .count {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--soft);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: 1fr 210px;
+      min-height: 168px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--panel), color-mix(in srgb, var(--panel2) 54%, white 46%));
+      box-shadow: 0 16px 38px var(--shadow);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .card .copy { padding: 24px; }
+    .eyebrow {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 13px;
+      max-width: 390px;
+    }
+    .media {
+      background:
+        radial-gradient(180px circle at 22% 12%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 48%),
+        linear-gradient(135deg, color-mix(in srgb, var(--panel2) 70%, var(--accent) 30%), var(--panel));
+      border-left: 1px solid var(--border);
+    }
+    .small-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .mini {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel);
+      padding: 14px;
+      min-height: 82px;
+      box-shadow: 0 10px 24px rgba(16,24,40,0.045);
+    }
+    .mini b {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .mini span {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="intro">
+      <h1>Light Theme Visual Directions</h1>
+      <p>All options keep the same portfolio layout: dark sidebar, light content, serif section headers, restrained cards. Only the color language changes.</p>
+    </div>
+
+    <div class="grid">
+      <section class="option o1">
+        <div class="label">
+          <div>
+            <h2>Option 1 · Slate Editorial</h2>
+            <p>Professional, calm, slightly corporate. Best if you want serious and authentic.</p>
+          </div>
+          <div class="chips"><i class="swatch" style="background:#151f2b"></i><i class="swatch" style="background:#3f6478"></i><i class="swatch" style="background:#f6f7f9"></i></div>
+        </div>
+        <div class="mock">
+          <aside class="side">
+            <div class="logo">js.</div><div class="name">Jaskaran Singh</div><div class="role">Senior Android Engineer</div>
+            <div class="nav"><span class="active">About</span><span>Experience</span><span>Projects</span><span>Writing</span><span>Contact</span></div>
+          </aside>
+          <main class="main">
+            <div class="heading"><span class="num">03.</span><h3 class="title">Projects</h3></div>
+            <div class="filters"><div class="btns"><button class="btn active">All</button><button class="btn">Android</button><button class="btn">AI</button></div><span class="count">3 PROJECTS</span></div>
+            <article class="card"><div class="copy"><div class="eyebrow">Featured Project</div><h3>Life-Capture Notes</h3><p>Smart note-taking product surface with AI summaries, reminders, and structured mobile workflows.</p></div><div class="media"></div></article>
+            <div class="small-grid"><div class="mini"><b>Reliable</b><span>Quiet colors support scanning.</span></div><div class="mini"><b>Clear</b><span>Strong text, soft surfaces.</span></div><div class="mini"><b>Authentic</b><span>Feels senior and grounded.</span></div></div>
+          </main>
+        </div>
+      </section>
+
+      <section class="option o2">
+        <div class="label">
+          <div>
+            <h2>Option 2 · Warm Editorial</h2>
+            <p>Natural and softer, with subtle olive/stone tones. Less tech, more portfolio/editorial.</p>
+          </div>
+          <div class="chips"><i class="swatch" style="background:#1c211f"></i><i class="swatch" style="background:#596f5f"></i><i class="swatch" style="background:#f8f6f1"></i></div>
+        </div>
+        <div class="mock">
+          <aside class="side">
+            <div class="logo">js.</div><div class="name">Jaskaran Singh</div><div class="role">Senior Android Engineer</div>
+            <div class="nav"><span>About</span><span class="active">Experience</span><span>Projects</span><span>Writing</span><span>Contact</span></div>
+          </aside>
+          <main class="main">
+            <div class="heading"><span class="num">02.</span><h3 class="title">Experience</h3></div>
+            <div class="filters"><div class="btns"><button class="btn active">Recent</button><button class="btn">Mobile</button><button class="btn">AI</button></div><span class="count">5 YEARS</span></div>
+            <article class="card"><div class="copy"><div class="eyebrow">Primary Signal</div><h3>Production scale without noise</h3><p>Muted warmth, editorial surfaces, and a restrained accent for a calmer professional read.</p></div><div class="media"></div></article>
+            <div class="small-grid"><div class="mini"><b>Soft</b><span>Easy on eyes.</span></div><div class="mini"><b>Human</b><span>Less corporate coldness.</span></div><div class="mini"><b>Careful</b><span>Professional without flash.</span></div></div>
+          </main>
+        </div>
+      </section>
+
+      <section class="option o3">
+        <div class="label">
+          <div>
+            <h2>Option 3 · Deep Teal Product</h2>
+            <p>Still natural, but more modern/product-like. Stronger identity without bright colors.</p>
+          </div>
+          <div class="chips"><i class="swatch" style="background:#102024"></i><i class="swatch" style="background:#24606d"></i><i class="swatch" style="background:#f5f7f8"></i></div>
+        </div>
+        <div class="mock">
+          <aside class="side">
+            <div class="logo">js.</div><div class="name">Jaskaran Singh</div><div class="role">Senior Android Engineer</div>
+            <div class="nav"><span>About</span><span>Experience</span><span class="active">Projects</span><span>Writing</span><span>Contact</span></div>
+          </aside>
+          <main class="main">
+            <div class="heading"><span class="num">04.</span><h3 class="title">Writing</h3></div>
+            <div class="filters"><div class="btns"><button class="btn active">AI Systems</button><button class="btn">Mobile</button></div><span class="count">2 ARTICLES</span></div>
+            <article class="card"><div class="copy"><div class="eyebrow">Published Writing</div><h3>AI code quality and product judgment</h3><p>Sharper identity with muted teal and cool neutral surfaces. Professional but less flat.</p></div><div class="media"></div></article>
+            <div class="small-grid"><div class="mini"><b>Modern</b><span>Product-grade color.</span></div><div class="mini"><b>Focused</b><span>Accent has presence.</span></div><div class="mini"><b>Balanced</b><span>Not flashy.</span></div></div>
+          </main>
+        </div>
+      </section>
+
+      <section class="option o4">
+        <div class="label">
+          <div>
+            <h2>Option 4 · Executive Blue-Gray</h2>
+            <p>Most formal. Navy/slate palette with minimal warmth. Good for recruiter credibility.</p>
+          </div>
+          <div class="chips"><i class="swatch" style="background:#101827"></i><i class="swatch" style="background:#364f7a"></i><i class="swatch" style="background:#f7f8fb"></i></div>
+        </div>
+        <div class="mock">
+          <aside class="side">
+            <div class="logo">js.</div><div class="name">Jaskaran Singh</div><div class="role">Senior Android Engineer</div>
+            <div class="nav"><span>About</span><span>Experience</span><span>Projects</span><span class="active">Stack</span><span>Contact</span></div>
+          </aside>
+          <main class="main">
+            <div class="heading"><span class="num">05.</span><h3 class="title">Stack</h3></div>
+            <div class="filters"><div class="btns"><button class="btn active">Core</button><button class="btn">Platform</button><button class="btn">AI</button></div><span class="count">PROFILE FIT</span></div>
+            <article class="card"><div class="copy"><div class="eyebrow">Engineering Surface</div><h3>Mobile systems, product delivery, AI review</h3><p>Cleanest and most corporate. Restrained blue-gray color supports trust and readability.</p></div><div class="media"></div></article>
+            <div class="small-grid"><div class="mini"><b>Formal</b><span>Recruiter-safe tone.</span></div><div class="mini"><b>Clean</b><span>Minimal color noise.</span></div><div class="mini"><b>Sharp</b><span>Best for credibility.</span></div></div>
+          </main>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

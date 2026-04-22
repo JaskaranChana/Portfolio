@@ -1017,8 +1017,8 @@ body.modal-open #section-counter {
 section { padding: 96px 0; border-bottom: none; position: relative; }
 @supports (content-visibility: auto) {
   section {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 900px;
+    content-visibility: visible;
+    contain-intrinsic-size: none;
   }
 }
 section:last-of-type { border-bottom: none; }
@@ -7697,6 +7697,596 @@ body.light .proj-link:hover {
 body.light .section-watermark {
   color: rgba(79,111,100,0.04);
 }
+
+/* Eye-comfort light palette: softer, natural, still professional. */
+body.light {
+  --bg: #f8f8f5;
+  --bg-2: #ffffff;
+  --bg-3: #eff1ee;
+  --border: #dde2dc;
+  --text: #202832;
+  --text-2: #46515a;
+  --text-3: #737d84;
+  --accent: #5f746b;
+  --accent-2: #63767d;
+  --accent-rgb: 95,116,107;
+  --accent-dim: rgba(95,116,107,0.075);
+  --accent-border: rgba(95,116,107,0.2);
+  background:
+    radial-gradient(900px circle at 78% -8%, rgba(95,116,107,0.055), transparent 46%),
+    radial-gradient(760px circle at 100% 24%, rgba(99,118,125,0.045), transparent 42%),
+    linear-gradient(180deg, #ffffff 0%, #f8f8f5 52%, #f0f2ef 100%);
+}
+body.light::before {
+  background:
+    linear-gradient(90deg, rgba(32,40,50,0.016) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(32,40,50,0.012) 1px, transparent 1px),
+    radial-gradient(880px circle at 76% -8%, rgba(95,116,107,0.04), transparent 46%),
+    radial-gradient(720px circle at 98% 28%, rgba(99,118,125,0.035), transparent 42%);
+  background-size: 88px 88px, 88px 88px, auto, auto;
+}
+body.light .sidebar {
+  background:
+    radial-gradient(560px circle at 18% 0%, rgba(95,116,107,0.13), transparent 42%),
+    linear-gradient(180deg, #182127 0%, #202b32 54%, #171f25 100%);
+  box-shadow: 24px 0 60px rgba(32,40,50,0.14);
+}
+body.light .sidebar-name {
+  background: linear-gradient(135deg, #ffffff 0%, #d8e0db 58%, #b8c5bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .nav-indicator {
+  background: linear-gradient(90deg, #d8e0db, #a6b6af);
+}
+body.light .section-title {
+  background: linear-gradient(135deg, #202832 0%, #42524b 58%, #5f746b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .section-num,
+body.light .hero-kicker,
+body.light .story-kicker,
+body.light .project-kicker,
+body.light .timeline-lab-kicker,
+body.light .terminal-kicker,
+body.light .service-kicker,
+body.light .now-label,
+body.light .writing-date,
+body.light .proj-num,
+body.light .exp-case-year,
+body.light .timeline-year {
+  color: #5f746b;
+}
+body.light .hero-panel,
+body.light .story-lens,
+body.light .hero-signal-wall,
+body.light .contact-body {
+  background:
+    radial-gradient(900px circle at 0% 0%, rgba(95,116,107,0.05), transparent 42%),
+    radial-gradient(720px circle at 100% 4%, rgba(99,118,125,0.04), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,0.985), rgba(248,250,248,0.95));
+  border-color: rgba(95,116,107,0.12);
+  box-shadow:
+    0 26px 68px rgba(32,40,50,0.08),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+}
+body.light .company-card,
+body.light .exp-case-card,
+body.light .proj-card,
+body.light .service-card,
+body.light .now-card,
+body.light .faq-item,
+body.light .writing-item {
+  background: linear-gradient(180deg, #ffffff, #fafbf9);
+  border-color: rgba(115,125,132,0.14);
+  box-shadow: 0 16px 40px rgba(32,40,50,0.055);
+}
+body.light .hero-proof-card,
+body.light .hero-signal,
+body.light .story-panel,
+body.light .story-point,
+body.light .exp-case-metric,
+body.light .project-modal-card,
+body.light .exp-modal-card,
+body.light .stack-row,
+body.light .availability-board,
+body.light .mini-term,
+body.light .contact-cta,
+body.light .timeline-lab,
+body.light .timeline-card,
+body.light .timeline-side,
+body.light .terminal-chip,
+body.light .terminal-shell,
+body.light #return-visit,
+body.light .project-orbit-card {
+  background: linear-gradient(180deg, #fbfcfb, #f1f3f1);
+  border-color: rgba(115,125,132,0.13);
+  box-shadow: 0 8px 22px rgba(32,40,50,0.04), 0 1px 0 rgba(255,255,255,0.84) inset;
+}
+body.light .section-title,
+body.light .contact-headline,
+body.light .company-title,
+body.light .proj-name,
+body.light .story-panel-title,
+body.light .exp-case-company,
+body.light .exp-modal-title,
+body.light .project-modal-title,
+body.light .writing-title,
+body.light .now-title,
+body.light .faq-q span:first-child,
+body.light .timeline-title {
+  color: #202832;
+}
+body.light .story-panel-copy,
+body.light .story-point p,
+body.light .company-card,
+body.light .proj-desc,
+body.light .hero-copy,
+body.light .contact-sub,
+body.light .writing-summary,
+body.light .now-sub,
+body.light .faq-a-inner,
+body.light .exp-section-intro,
+body.light .exp-case-summary,
+body.light .timeline-sub,
+body.light .terminal-note,
+body.light .timeline-points li,
+body.light .compare-list li,
+body.light .exp-modal-sub,
+body.light .project-modal-copy,
+body.light .project-modal-note,
+body.light .project-modal-list li,
+body.light .exp-modal-list li {
+  color: #46515a;
+}
+body.light .project-filter,
+body.light .writing-filter,
+body.light .faq-action,
+body.light .project-count,
+body.light .writing-action,
+body.light .hero-meta-chip,
+body.light .hero-action,
+body.light .role-chip,
+body.light .recruiter-action,
+body.light .share-btn,
+body.light .availability-picker,
+body.light .timeline-tab,
+body.light .story-chip,
+body.light .exp-modal-stage-tags span,
+body.light .project-modal-tags span,
+body.light .exp-case-tag,
+body.light .proj-tag,
+body.light .writing-read,
+body.light .app-dock,
+body.light .marquee-item {
+  background: #ffffff;
+  border-color: rgba(115,125,132,0.14);
+  color: #5f6970;
+}
+body.light .project-filter.active,
+body.light .writing-filter.active,
+body.light .timeline-tab.active,
+body.light .story-chip.active {
+  background: linear-gradient(135deg, #42524b, #5f746b 62%, #63767d);
+  border-color: rgba(95,116,107,0.26);
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(95,116,107,0.13);
+}
+body.light .project-filter:hover,
+body.light .writing-filter:hover,
+body.light .timeline-tab:hover,
+body.light .story-chip:hover,
+body.light .faq-action:hover,
+body.light .hero-action:hover {
+  background: #f4f6f3;
+  border-color: rgba(95,116,107,0.22);
+  color: #42524b;
+  box-shadow: 0 10px 22px rgba(95,116,107,0.07);
+}
+body.light .hero-action.primary,
+body.light .contact-cta.primary {
+  background: linear-gradient(135deg, #42524b, #5f746b 58%, #63767d);
+  border-color: rgba(95,116,107,0.26);
+  box-shadow: 0 18px 40px rgba(95,116,107,0.15);
+}
+body.light .proj-card::after,
+body.light .exp-case-card::after,
+body.light .service-card::after,
+body.light .writing-item::after,
+body.light .section-heading::before {
+  background: linear-gradient(90deg, #5f746b, #63767d);
+}
+body.light .proj-card::after,
+body.light .exp-case-card::after,
+body.light .service-card::after {
+  box-shadow: 0 0 12px rgba(95,116,107,0.12);
+}
+body.light .proj-card:hover,
+body.light .exp-case-card:hover,
+body.light .service-card:hover,
+body.light .faq-item.open {
+  background:
+    radial-gradient(740px circle at 0% 0%, rgba(95,116,107,0.045), transparent 44%),
+    linear-gradient(180deg, #ffffff, #f8faf8);
+  border-color: rgba(95,116,107,0.2);
+  box-shadow: 0 24px 58px rgba(32,40,50,0.075);
+}
+body.light .proj-img {
+  background:
+    radial-gradient(440px circle at 20% 0%, rgba(95,116,107,0.065), transparent 46%),
+    linear-gradient(135deg, #e9eeea, #fbfcfb);
+}
+body.light .proj-img::after {
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(32,40,50,0.12)),
+    radial-gradient(460px circle at 20% 0%, rgba(95,116,107,0.1), transparent 48%);
+}
+body.light .exp-case-tag,
+body.light .proj-tag,
+body.light .writing-read,
+body.light .role-chip {
+  background: rgba(248,250,248,0.98);
+  border-color: rgba(95,116,107,0.12);
+  color: #5f746b;
+}
+body.light .contact-body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(95,116,107,0.055), transparent 36%),
+    radial-gradient(circle at 92% 10%, rgba(99,118,125,0.045), transparent 32%),
+    linear-gradient(180deg, #ffffff, #f8faf8);
+  border-color: rgba(95,116,107,0.12);
+  box-shadow:
+    0 26px 68px rgba(32,40,50,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.88);
+}
+body.light #theme-toggle,
+body.light #back-to-top,
+body.light #palette-switch,
+body.light #return-visit,
+body.light #recruiter-launch,
+body.light .mobile-menu-btn {
+  background: #ffffff;
+  border-color: rgba(115,125,132,0.14);
+  color: #46515a;
+  box-shadow: 0 12px 30px rgba(32,40,50,0.06);
+}
+body.light #theme-toggle:hover,
+body.light #back-to-top:hover,
+body.light #return-visit:hover,
+body.light #recruiter-launch:hover,
+body.light .mobile-menu-btn:hover,
+body.light .contact-meta a:hover,
+body.light .resume-link:hover,
+body.light .proj-link:hover {
+  color: #5f746b;
+  border-color: rgba(95,116,107,0.24);
+  box-shadow: 0 14px 34px rgba(95,116,107,0.08);
+}
+body.light .section-watermark {
+  color: rgba(95,116,107,0.035);
+}
+
+/* Researched portfolio palette: warm off-white, slate ink, muted blue-gray accent. */
+body.light {
+  --bg: #f7f8f6;
+  --bg-2: #ffffff;
+  --bg-3: #eef2f1;
+  --border: #d9dfdd;
+  --text: #1d2935;
+  --text-2: #42515e;
+  --text-3: #75818a;
+  --accent: #3f6478;
+  --accent-2: #62746c;
+  --accent-rgb: 63,100,120;
+  --accent-dim: rgba(63,100,120,0.075);
+  --accent-border: rgba(63,100,120,0.2);
+  background:
+    radial-gradient(900px circle at 78% -8%, rgba(63,100,120,0.06), transparent 46%),
+    radial-gradient(760px circle at 100% 24%, rgba(98,116,108,0.045), transparent 42%),
+    linear-gradient(180deg, #ffffff 0%, #f7f8f6 52%, #eef2f1 100%);
+}
+body.light::before {
+  background:
+    linear-gradient(90deg, rgba(29,41,53,0.014) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(29,41,53,0.011) 1px, transparent 1px),
+    radial-gradient(860px circle at 74% -8%, rgba(63,100,120,0.04), transparent 46%),
+    radial-gradient(700px circle at 98% 28%, rgba(98,116,108,0.035), transparent 42%);
+  background-size: 92px 92px, 92px 92px, auto, auto;
+}
+body.light .sidebar {
+  background:
+    radial-gradient(560px circle at 18% 0%, rgba(63,100,120,0.16), transparent 42%),
+    linear-gradient(180deg, #17212b 0%, #202b35 54%, #151e27 100%);
+  box-shadow: 24px 0 58px rgba(29,41,53,0.14);
+}
+body.light .sidebar::after {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), transparent 34%, rgba(98,116,108,0.075)),
+    radial-gradient(360px circle at 26% 12%, rgba(255,255,255,0.05), transparent 45%);
+}
+body.light .sidebar-name {
+  background: linear-gradient(135deg, #ffffff 0%, #d8dfdc 58%, #adbbb5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .sidebar-logo,
+body.light .sidebar-role,
+body.light .sidebar-role2,
+body.light .greeting,
+body.light .sidebar-nav a,
+body.light .social-link,
+body.light .kbd-hint {
+  color: rgba(225,232,229,0.74);
+}
+body.light .nav-indicator {
+  background: linear-gradient(90deg, #d8dfdc, #9dafaa);
+}
+body.light .section-title {
+  background: linear-gradient(135deg, #1d2935 0%, #344b59 58%, #3f6478 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .section-num,
+body.light .hero-kicker,
+body.light .story-kicker,
+body.light .project-kicker,
+body.light .timeline-lab-kicker,
+body.light .terminal-kicker,
+body.light .service-kicker,
+body.light .now-label,
+body.light .writing-date,
+body.light .proj-num,
+body.light .exp-case-year,
+body.light .timeline-year {
+  color: #3f6478;
+}
+body.light .hero-panel,
+body.light .story-lens,
+body.light .hero-signal-wall,
+body.light .contact-body {
+  background:
+    radial-gradient(900px circle at 0% 0%, rgba(63,100,120,0.055), transparent 42%),
+    radial-gradient(720px circle at 100% 4%, rgba(98,116,108,0.04), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,0.985), rgba(248,250,249,0.95));
+  border-color: rgba(63,100,120,0.12);
+  box-shadow:
+    0 24px 62px rgba(29,41,53,0.075),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+}
+body.light .company-card,
+body.light .exp-case-card,
+body.light .proj-card,
+body.light .service-card,
+body.light .now-card,
+body.light .faq-item,
+body.light .writing-item {
+  background: linear-gradient(180deg, #ffffff, #fafbf9);
+  border-color: rgba(117,129,138,0.14);
+  box-shadow: 0 14px 36px rgba(29,41,53,0.052);
+}
+body.light .hero-proof-card,
+body.light .hero-signal,
+body.light .story-panel,
+body.light .story-point,
+body.light .exp-case-metric,
+body.light .project-modal-card,
+body.light .exp-modal-card,
+body.light .stack-row,
+body.light .availability-board,
+body.light .mini-term,
+body.light .contact-cta,
+body.light .timeline-lab,
+body.light .timeline-card,
+body.light .timeline-side,
+body.light .terminal-chip,
+body.light .terminal-shell,
+body.light #return-visit,
+body.light .project-orbit-card {
+  background: linear-gradient(180deg, #fbfcfb, #f0f3f2);
+  border-color: rgba(117,129,138,0.13);
+  box-shadow: 0 8px 22px rgba(29,41,53,0.038), 0 1px 0 rgba(255,255,255,0.84) inset;
+}
+body.light .section-title,
+body.light .contact-headline,
+body.light .company-title,
+body.light .proj-name,
+body.light .story-panel-title,
+body.light .exp-case-company,
+body.light .exp-modal-title,
+body.light .project-modal-title,
+body.light .writing-title,
+body.light .now-title,
+body.light .faq-q span:first-child,
+body.light .timeline-title {
+  color: #1d2935;
+}
+body.light .story-panel-copy,
+body.light .story-point p,
+body.light .company-card,
+body.light .proj-desc,
+body.light .hero-copy,
+body.light .contact-sub,
+body.light .writing-summary,
+body.light .now-sub,
+body.light .faq-a-inner,
+body.light .exp-section-intro,
+body.light .exp-case-summary,
+body.light .timeline-sub,
+body.light .terminal-note,
+body.light .timeline-points li,
+body.light .compare-list li,
+body.light .exp-modal-sub,
+body.light .project-modal-copy,
+body.light .project-modal-note,
+body.light .project-modal-list li,
+body.light .exp-modal-list li {
+  color: #42515e;
+}
+body.light .project-filter,
+body.light .writing-filter,
+body.light .faq-action,
+body.light .project-count,
+body.light .writing-action,
+body.light .hero-meta-chip,
+body.light .hero-action,
+body.light .role-chip,
+body.light .recruiter-action,
+body.light .share-btn,
+body.light .availability-picker,
+body.light .timeline-tab,
+body.light .story-chip,
+body.light .exp-modal-stage-tags span,
+body.light .project-modal-tags span,
+body.light .exp-case-tag,
+body.light .proj-tag,
+body.light .writing-read,
+body.light .app-dock,
+body.light .marquee-item {
+  background: #ffffff;
+  border-color: rgba(117,129,138,0.14);
+  color: #5f6b73;
+}
+body.light .project-filter.active,
+body.light .writing-filter.active,
+body.light .timeline-tab.active,
+body.light .story-chip.active {
+  background: linear-gradient(135deg, #344b59, #3f6478 62%, #62746c);
+  border-color: rgba(63,100,120,0.28);
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(63,100,120,0.13);
+}
+body.light .project-filter:hover,
+body.light .writing-filter:hover,
+body.light .timeline-tab:hover,
+body.light .story-chip:hover,
+body.light .faq-action:hover,
+body.light .hero-action:hover {
+  background: #f3f6f5;
+  border-color: rgba(63,100,120,0.22);
+  color: #344b59;
+  box-shadow: 0 10px 22px rgba(63,100,120,0.07);
+}
+body.light .hero-action.primary,
+body.light .contact-cta.primary {
+  background: linear-gradient(135deg, #344b59, #3f6478 58%, #62746c);
+  border-color: rgba(63,100,120,0.26);
+  box-shadow: 0 18px 40px rgba(63,100,120,0.15);
+}
+body.light .proj-card::after,
+body.light .exp-case-card::after,
+body.light .service-card::after,
+body.light .writing-item::after,
+body.light .section-heading::before {
+  background: linear-gradient(90deg, #3f6478, #62746c);
+}
+body.light .proj-card::after,
+body.light .exp-case-card::after,
+body.light .service-card::after {
+  box-shadow: 0 0 12px rgba(63,100,120,0.12);
+}
+body.light .proj-card:hover,
+body.light .exp-case-card:hover,
+body.light .service-card:hover,
+body.light .faq-item.open {
+  background:
+    radial-gradient(740px circle at 0% 0%, rgba(63,100,120,0.045), transparent 44%),
+    linear-gradient(180deg, #ffffff, #f8faf9);
+  border-color: rgba(63,100,120,0.2);
+  box-shadow: 0 24px 58px rgba(29,41,53,0.07);
+}
+body.light .proj-img {
+  background:
+    radial-gradient(440px circle at 20% 0%, rgba(63,100,120,0.06), transparent 46%),
+    linear-gradient(135deg, #e9eeee, #fbfcfb);
+}
+body.light .proj-img::after {
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(29,41,53,0.12)),
+    radial-gradient(460px circle at 20% 0%, rgba(63,100,120,0.095), transparent 48%);
+}
+body.light .exp-case-tag,
+body.light .proj-tag,
+body.light .writing-read,
+body.light .role-chip {
+  background: rgba(248,250,249,0.98);
+  border-color: rgba(63,100,120,0.12);
+  color: #3f6478;
+}
+body.light .contact-body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(63,100,120,0.05), transparent 36%),
+    radial-gradient(circle at 92% 10%, rgba(98,116,108,0.04), transparent 32%),
+    linear-gradient(180deg, #ffffff, #f8faf9);
+  border-color: rgba(63,100,120,0.12);
+  box-shadow:
+    0 24px 62px rgba(29,41,53,0.075),
+    inset 0 1px 0 rgba(255,255,255,0.88);
+}
+body.light #theme-toggle,
+body.light #back-to-top,
+body.light #palette-switch,
+body.light #return-visit,
+body.light #recruiter-launch,
+body.light .mobile-menu-btn {
+  background: #ffffff;
+  border-color: rgba(117,129,138,0.14);
+  color: #42515e;
+  box-shadow: 0 12px 30px rgba(29,41,53,0.055);
+}
+body.light #theme-toggle:hover,
+body.light #back-to-top:hover,
+body.light #return-visit:hover,
+body.light #recruiter-launch:hover,
+body.light .mobile-menu-btn:hover,
+body.light .contact-meta a:hover,
+body.light .resume-link:hover,
+body.light .proj-link:hover {
+  color: #3f6478;
+  border-color: rgba(63,100,120,0.24);
+  box-shadow: 0 14px 34px rgba(63,100,120,0.08);
+}
+body.light .section-watermark {
+  color: rgba(63,100,120,0.034);
+}
+
+/* Header/alignment correction: identical structure in light and dark themes. */
+body.light .section-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 58px;
+  padding: 0;
+  position: relative;
+}
+body.light .section-heading::before,
+body.light .section-heading::after {
+  content: none;
+  display: none;
+}
+body.light .section-title {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: #1d2935;
+  color: #1d2935;
+  letter-spacing: -0.02em;
+  text-shadow: none;
+}
+body.light .section-watermark {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 100px;
+  letter-spacing: -0.06em;
+}
+body.light .section-num {
+  flex-shrink: 0;
+}
 @media (max-width: 1100px) {
   .impact-grid,
   .timeline-display { grid-template-columns: 1fr; }
@@ -8627,6 +9217,23 @@ body.light .section-watermark {
         </div>
       </div>
       <div class="writing-list sr">
+        <a class="writing-item" data-writing="ai systems" href="https://dev.to/jaskaran_singh/the-mental-model-i-use-to-write-prompts-that-dont-produce-garbage-code-1kgh" target="_blank" rel="noopener">
+          <div class="writing-meta"><div class="writing-date">Apr 2026</div><span class="writing-read">Dev.to</span></div>
+          <div class="writing-body">
+            <div class="writing-title">The mental model I use to write prompts that don't produce garbage code.</div>
+            <div class="writing-summary">
+              A practical prompting framework for getting more reliable code
+              from AI systems by making intent, constraints, context, and
+              review criteria explicit before generation starts.
+            </div>
+            <div class="writing-tags">
+              <span class="writing-tag">Prompting</span>
+              <span class="writing-tag">AI Coding</span>
+              <span class="writing-tag">Engineering</span>
+            </div>
+          </div>
+          <span class="writing-arrow">↗</span>
+        </a>
         <a class="writing-item" data-writing="ai systems" href="https://dev.to/jaskaran_singh/i-grade-ai-code-for-a-living-heres-what-nobody-talks-about-4do3" target="_blank" rel="noopener">
           <div class="writing-meta"><div class="writing-date">Apr 2026</div><span class="writing-read">Dev.to</span></div>
           <div class="writing-body">
