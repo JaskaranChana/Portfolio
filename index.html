@@ -91,7 +91,7 @@ body::before {
     linear-gradient(180deg, rgba(255,255,255,0.012), transparent 14%, transparent 86%, rgba(255,255,255,0.015)),
     linear-gradient(180deg, transparent, var(--scene-tint), transparent),
     radial-gradient(800px circle at 50% -10%, var(--scene-tint), transparent 60%);
-  transition: background 1.2s ease;
+  transition: opacity 0.4s ease;
 }
 body::selection {
   background: var(--accent-border);
@@ -106,6 +106,8 @@ body[data-scene="services"] { --scene-tint: rgba(var(--accent-rgb),0.05); }
 body[data-scene="now"] { --scene-tint: rgba(var(--accent-rgb),0.05); }
 body[data-scene="faq"] { --scene-tint: rgba(var(--accent-rgb),0.045); }
 body[data-scene="contact"] { --scene-tint: rgba(var(--accent-rgb),0.065); }
+body[data-scene] { --scene-tint: rgba(var(--accent-rgb),0.024); }
+body.light[data-scene] { --scene-tint: rgba(var(--accent-rgb),0.018); }
 
 /* ── NOISE TEXTURE ── */
 body::after {
@@ -118,13 +120,12 @@ body::after {
 #portal-veil {
   position: fixed; inset: 0;
   pointer-events: none; z-index: 120;
+  display: none;
   opacity: 0;
-  background:
-    radial-gradient(500px circle at 50% 50%, rgba(var(--accent-rgb),0.12), transparent 58%),
-    linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.22), rgba(0,0,0,0));
-  transition: opacity 0.7s var(--ease);
+  background: none;
+  transition: none;
 }
-#portal-veil.flash { opacity: 1; }
+#portal-veil.flash { opacity: 0; }
 
 #immersive-stage {
   position: fixed;
@@ -174,54 +175,54 @@ body::after {
 
 /* ── LIGHT THEME ── */
 body.light {
-  --bg: #f4f1ea;
-  --bg-2: #fffdf8;
-  --bg-3: #ebe5d9;
-  --border: #d8cdbb;
-  --text: #16202a;
-  --text-2: #4f5b61;
-  --text-3: #7a7165;
-  --accent: #0f766e;
-  --accent-2: #b7791f;
-  --accent-rgb: 15,118,110;
-  --accent-dim: rgba(15,118,110,0.08);
-  --accent-border: rgba(15,118,110,0.24);
-  --accent-contrast: #f8fffc;
+  --bg: #eef3f8;
+  --bg-2: #f9fbfd;
+  --bg-3: #e4ebf3;
+  --border: #c7d2df;
+  --text: #142033;
+  --text-2: #4b5a6d;
+  --text-3: #768397;
+  --accent: #2453c6;
+  --accent-2: #0e6f68;
+  --accent-rgb: 36,83,198;
+  --accent-dim: rgba(36,83,198,0.085);
+  --accent-border: rgba(36,83,198,0.24);
+  --accent-contrast: #ffffff;
+  --green: #12805c;
 }
 body.light {
   background:
-    radial-gradient(980px circle at 6% 8%, rgba(183,121,31,0.12), transparent 38%),
-    radial-gradient(760px circle at 94% 10%, rgba(15,118,110,0.12), transparent 34%),
-    radial-gradient(720px circle at 48% 100%, rgba(46,72,88,0.08), transparent 40%),
+    radial-gradient(980px circle at 4% 6%, rgba(36,83,198,0.14), transparent 36%),
+    radial-gradient(780px circle at 96% 8%, rgba(14,111,104,0.11), transparent 34%),
+    linear-gradient(180deg, #f5f8fc 0%, #eef3f8 46%, #e8eef5 100%),
     var(--bg);
 }
 body.light::before {
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.5), transparent 18%, transparent 82%, rgba(183,121,31,0.06)),
-    linear-gradient(180deg, transparent, rgba(15,118,110,0.045), transparent),
-    radial-gradient(800px circle at 50% -10%, rgba(183,121,31,0.08), transparent 60%);
+    linear-gradient(180deg, rgba(255,255,255,0.52), transparent 20%, transparent 82%, rgba(36,83,198,0.04)),
+    radial-gradient(900px circle at 50% -10%, rgba(14,111,104,0.07), transparent 62%);
 }
 body.light::after { opacity: 0.012; }
 body.light .sidebar {
   background:
-    linear-gradient(180deg, rgba(255,253,248,0.94), rgba(248,244,235,0.9)),
-    linear-gradient(160deg, rgba(15,118,110,0.08), transparent 34%);
-  box-shadow: 18px 0 46px rgba(53,45,32,0.08);
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,251,255,0.92)),
+    linear-gradient(160deg, rgba(37,99,235,0.07), transparent 34%);
+  box-shadow: 18px 0 46px rgba(15,23,42,0.07);
 }
-body.light .mobile-header { background: rgba(255,253,248,0.94); }
+body.light .mobile-header { background: rgba(255,255,255,0.94); }
 body.light .sidebar-name {
-  background: linear-gradient(135deg, #20303a 8%, #0f766e 54%, #8a5a16 100%);
+  background: linear-gradient(135deg, #111827 8%, #2563eb 56%, #0f766e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 body.light .sidebar-logo {
-  color: #0f766e;
+  color: #2563eb;
 }
 body.light .sidebar-role,
 body.light .sidebar-role2,
 body.light .greeting {
-  color: #48565d;
+  color: #4b5563;
 }
 body.light .hero-panel,
 body.light .hero-signal-wall,
@@ -236,9 +237,9 @@ body.light #exp-modal-panel,
 body.light #project-modal-panel,
 body.light #tldr-panel {
   background:
-    linear-gradient(180deg, rgba(255,253,248,0.98), rgba(250,246,238,0.96));
-  border-color: rgba(112,96,72,0.22);
-  box-shadow: 0 26px 62px rgba(70,55,31,0.14), 0 1px 0 rgba(255,255,255,0.82) inset;
+    linear-gradient(180deg, rgba(255,255,255,0.99), rgba(248,251,255,0.97));
+  border-color: rgba(148,163,184,0.36);
+  box-shadow: 0 26px 62px rgba(15,23,42,0.12), 0 1px 0 rgba(255,255,255,0.9) inset;
 }
 body.light .section-title,
 body.light .contact-headline,
@@ -253,7 +254,7 @@ body.light .now-title,
 body.light .faq-q span:first-child {
   color: #16202a;
 }
-body.light .section-watermark { color: rgba(112,96,72,0.08); }
+body.light .section-watermark { color: rgba(15,23,42,0.055); }
 body.light .section-line,
 body.light .nav-indicator,
 body.light .exp-case-metric,
@@ -268,7 +269,7 @@ body.light .availability-board,
 body.light .mini-term,
 body.light .contact-cta,
 body.light .writing-item::before {
-  border-color: rgba(124,108,82,0.25);
+  border-color: rgba(148,163,184,0.32);
 }
 body.light .story-panel-copy,
 body.light .story-point p,
@@ -295,8 +296,8 @@ body.light .writing-action,
 body.light .hero-meta-chip,
 body.light .hero-action,
 body.light .app-dock {
-  background: rgba(255,253,248,0.94);
-  border-color: rgba(124,108,82,0.24);
+  background: rgba(255,255,255,0.94);
+  border-color: rgba(148,163,184,0.32);
 }
 body.light .hero-proof-card,
 body.light .hero-signal,
@@ -309,12 +310,12 @@ body.light .stack-row,
 body.light .availability-board,
 body.light .mini-term,
 body.light .contact-cta {
-  background: rgba(255,250,240,0.62);
+  background: rgba(248,251,255,0.82);
 }
 body.light .hero-action.primary {
-  background: linear-gradient(135deg, #0f766e, #2aa198 55%, #b7791f);
-  color: #fffdf8;
-  box-shadow: 0 16px 34px rgba(15,118,110,0.18);
+  background: linear-gradient(135deg, #1d4ed8, #2563eb 58%, #0f766e);
+  color: #ffffff;
+  box-shadow: 0 16px 34px rgba(37,99,235,0.18);
 }
 body.light .hero-meta-chip strong,
 body.light .section-num,
@@ -343,6 +344,432 @@ body.light .hero-action:hover,
 body.light .resume-link:hover,
 body.light .proj-link:hover,
 body.light .social-link:hover { color: var(--accent); }
+
+/* Complete light-theme surface map: keep every floating tool and modal in the same system. */
+body.light .marquee {
+  background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(248,251,255,0.62));
+  border-color: rgba(148,163,184,0.28);
+  opacity: 0.92;
+}
+body.light .marquee-item {
+  background: rgba(255,255,255,0.78);
+  border-color: rgba(148,163,184,0.28);
+  color: #64748b;
+}
+body.light #theme-toggle,
+body.light #back-to-top,
+body.light #palette-switch,
+body.light #return-visit,
+body.light #recruiter-launch {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(148,163,184,0.36);
+  box-shadow: 0 16px 36px rgba(15,23,42,0.11);
+  color: #475569;
+}
+body.light #theme-toggle:hover,
+body.light #back-to-top:hover,
+body.light #return-visit:hover,
+body.light #recruiter-launch:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+  background: #ffffff;
+}
+body.light .palette-dot.active {
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+body.light .palette-dot:hover {
+  box-shadow: 0 0 0 5px rgba(37,99,235,0.08);
+}
+body.light .palette-dot::after {
+  background: #ffffff;
+  border-color: rgba(148,163,184,0.36);
+  color: #334155;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+}
+body.light[data-accent="cyan"] {
+  --accent: #0891b2;
+  --accent-2: #2563eb;
+  --accent-rgb: 8,145,178;
+  --accent-dim: rgba(8,145,178,0.075);
+  --accent-border: rgba(8,145,178,0.24);
+  --accent-contrast: #ffffff;
+}
+body.light[data-accent="violet"] {
+  --accent: #7c3aed;
+  --accent-2: #2563eb;
+  --accent-rgb: 124,58,237;
+  --accent-dim: rgba(124,58,237,0.075);
+  --accent-border: rgba(124,58,237,0.24);
+  --accent-contrast: #ffffff;
+}
+body.light[data-accent="emerald"] {
+  --accent: #047857;
+  --accent-2: #2563eb;
+  --accent-rgb: 4,120,87;
+  --accent-dim: rgba(4,120,87,0.075);
+  --accent-border: rgba(4,120,87,0.24);
+  --accent-contrast: #ffffff;
+}
+body.light[data-accent="amber"] {
+  --accent: #b45309;
+  --accent-2: #2563eb;
+  --accent-rgb: 180,83,9;
+  --accent-dim: rgba(180,83,9,0.08);
+  --accent-border: rgba(180,83,9,0.25);
+  --accent-contrast: #ffffff;
+}
+body.light #cmd-backdrop,
+body.light #shortcuts-backdrop,
+body.light #qr-backdrop,
+body.light #tldr-backdrop,
+body.light #recruiter-backdrop,
+body.light #exp-modal-backdrop,
+body.light #project-modal-backdrop {
+  background:
+    radial-gradient(760px circle at 50% 18%, rgba(var(--accent-rgb),0.12), transparent 56%),
+    rgba(15,23,42,0.26);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+body.light #cmd-palette,
+body.light #shortcuts-panel,
+body.light #qr-panel,
+body.light #recruiter-panel,
+body.light #exp-modal-panel,
+body.light #project-modal-panel {
+  background:
+    radial-gradient(900px circle at 10% -10%, rgba(var(--accent-rgb),0.08), transparent 44%),
+    linear-gradient(180deg, rgba(255,255,255,0.99), rgba(248,251,255,0.97));
+  border-color: rgba(148,163,184,0.36);
+  box-shadow: 0 30px 80px rgba(15,23,42,0.18), 0 1px 0 rgba(255,255,255,0.92) inset;
+}
+body.light .exp-modal-head,
+body.light .project-modal-head,
+body.light .contact-classic-note,
+body.light .site-footer {
+  border-color: rgba(148,163,184,0.28);
+}
+body.light .exp-modal-body::before,
+body.light .project-modal-body::before {
+  border-color: rgba(148,163,184,0.24);
+}
+body.light .exp-modal-body::after,
+body.light .project-modal-body::after {
+  opacity: 0.22;
+}
+body.light .exp-modal-stage,
+body.light .exp-modal-metric,
+body.light .project-modal-metric,
+body.light .exp-modal-card,
+body.light .project-modal-card,
+body.light .timeline-lab,
+body.light .timeline-card,
+body.light .timeline-side,
+body.light .project-orbit,
+body.light .project-orbit-card,
+body.light .terminal-shell,
+body.light .terminal-chip {
+  background:
+    radial-gradient(420px circle at 12% 0%, rgba(var(--accent-rgb),0.055), transparent 48%),
+    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,251,255,0.82));
+  border-color: rgba(148,163,184,0.32);
+  box-shadow: 0 14px 34px rgba(15,23,42,0.08), 0 1px 0 rgba(255,255,255,0.78) inset;
+}
+body.light .exp-modal-stage-quote {
+  color: var(--text);
+  text-shadow: none;
+}
+body.light .exp-modal-stage-tags span,
+body.light .project-modal-tags span,
+body.light .exp-case-tag,
+body.light .proj-tag,
+body.light .writing-read,
+body.light .hero-meta-chip,
+body.light .role-chip,
+body.light .recruiter-action,
+body.light .share-btn,
+body.light .availability-picker,
+body.light .faq-action,
+body.light .writing-filter,
+body.light .project-filter {
+  background: rgba(255,255,255,0.78);
+  border-color: rgba(148,163,184,0.32);
+  color: #475569;
+}
+body.light .proj-card:hover {
+  background: #ffffff;
+  box-shadow: 0 20px 42px rgba(15,23,42,0.12), 0 0 0 1px rgba(var(--accent-rgb),0.12);
+}
+body.light .proj-img {
+  background: #e2e8f0;
+}
+body.light .proj-img img {
+  filter: brightness(0.96) saturate(1.03);
+}
+body.light .proj-card:hover .proj-img img {
+  filter: brightness(1) saturate(1.06);
+}
+body.light .mobile-menu-btn {
+  background: rgba(255,255,255,0.72);
+  border-color: rgba(148,163,184,0.36);
+  color: #475569;
+}
+body.light .nav-overlay {
+  background: rgba(248,251,255,0.98);
+}
+body.light .nav-overlay a {
+  color: #334155;
+}
+body.light .overlay-close {
+  color: #64748b;
+}
+body.light .mini-term {
+  background: #f8fafc;
+  box-shadow: 0 20px 46px rgba(15,23,42,0.12), 0 0 0 1px var(--accent-border);
+}
+body.light .mini-term-body,
+body.light .terminal-shell {
+  color: #475569;
+}
+body.light .mini-term-body .cmd,
+body.light .mini-term-body .out b {
+  color: #111827;
+}
+body.light #qr-panel canvas {
+  background: #ffffff;
+}
+body.light #back-to-top:hover {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+body.light .hero-panel::after,
+body.light .hero-panel::before,
+body.light .story-lens::before,
+body.light .hero-signal-wall::after {
+  opacity: 0.18;
+}
+body.light .project-modal-hero::after {
+  background:
+    linear-gradient(180deg, rgba(15,23,42,0.04), rgba(15,23,42,0.48) 72%, rgba(15,23,42,0.78)),
+    radial-gradient(520px circle at 14% 18%, rgba(var(--accent-rgb),0.18), transparent 58%);
+}
+body.light .contact-body {
+  background:
+    radial-gradient(circle at top center, rgba(var(--accent-rgb),0.06), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(248,251,255,0.82));
+  border-color: rgba(148,163,184,0.32);
+  box-shadow: 0 22px 52px rgba(15,23,42,0.11), inset 0 1px 0 rgba(255,255,255,0.88);
+}
+body.light .contact-body::before {
+  background: linear-gradient(135deg, rgba(var(--accent-rgb),0.16), rgba(15,118,110,0.1), rgba(148,163,184,0.16));
+}
+body.light .contact-body::after {
+  opacity: 0.22;
+}
+body.light .contact-stage::after {
+  border-color: rgba(148,163,184,0.18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.28), transparent 24%),
+    radial-gradient(500px circle at 20% 18%, rgba(var(--accent-rgb),0.045), transparent 60%);
+}
+body.light .contact-beam {
+  background: rgba(var(--accent-rgb),0.1);
+  opacity: 0.22;
+}
+body.light .contact-grid-glow {
+  background: rgba(15,118,110,0.08);
+  opacity: 0.2;
+}
+body.light .contact-rings {
+  opacity: 0.28;
+}
+
+/* Professional light-mode finish: richer surfaces, calmer accents, stronger hierarchy. */
+body.light .sidebar {
+  background:
+    linear-gradient(180deg, rgba(250,252,255,0.96), rgba(232,239,247,0.94)),
+    linear-gradient(145deg, rgba(36,83,198,0.085), transparent 38%);
+  border-right-color: rgba(127,143,163,0.28);
+  box-shadow: 18px 0 46px rgba(20,32,51,0.075);
+}
+body.light .mobile-header,
+body.light .nav-overlay {
+  background: rgba(246,249,253,0.96);
+  border-color: rgba(127,143,163,0.26);
+}
+body.light .sidebar-name {
+  background: linear-gradient(135deg, #142033 6%, #2453c6 54%, #0e6f68 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .sidebar-role,
+body.light .sidebar-role2,
+body.light .greeting,
+body.light .nav-overlay a,
+body.light .contact-meta a,
+body.light .resume-link,
+body.light .proj-link,
+body.light .social-link {
+  color: #526174;
+}
+body.light .hero-panel,
+body.light .hero-signal-wall,
+body.light .story-lens,
+body.light .company-card,
+body.light .exp-case-card,
+body.light .proj-card,
+body.light .service-card,
+body.light .now-card,
+body.light .faq-item,
+body.light #cmd-palette,
+body.light #shortcuts-panel,
+body.light #qr-panel,
+body.light #recruiter-panel,
+body.light #exp-modal-panel,
+body.light #project-modal-panel,
+body.light #tldr-panel {
+  background:
+    radial-gradient(760px circle at 8% 0%, rgba(36,83,198,0.055), transparent 48%),
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(241,246,251,0.9));
+  border-color: rgba(127,143,163,0.34);
+  box-shadow:
+    0 24px 58px rgba(20,32,51,0.13),
+    0 1px 0 rgba(255,255,255,0.88) inset;
+}
+body.light .hero-proof-card,
+body.light .hero-signal,
+body.light .story-panel,
+body.light .story-point,
+body.light .exp-case-metric,
+body.light .project-modal-card,
+body.light .exp-modal-card,
+body.light .stack-row,
+body.light .availability-board,
+body.light .mini-term,
+body.light .contact-cta,
+body.light .timeline-lab,
+body.light .timeline-card,
+body.light .timeline-side,
+body.light .terminal-chip,
+body.light .terminal-shell,
+body.light #return-visit,
+body.light .project-orbit-card {
+  background:
+    linear-gradient(180deg, rgba(250,252,255,0.92), rgba(231,238,247,0.78));
+  border-color: rgba(127,143,163,0.32);
+  box-shadow: 0 14px 34px rgba(20,32,51,0.09), 0 1px 0 rgba(255,255,255,0.76) inset;
+}
+body.light .project-filter,
+body.light .writing-filter,
+body.light .faq-action,
+body.light .project-count,
+body.light .writing-action,
+body.light .hero-meta-chip,
+body.light .hero-action,
+body.light .role-chip,
+body.light .recruiter-action,
+body.light .share-btn,
+body.light .availability-picker,
+body.light .exp-modal-stage-tags span,
+body.light .project-modal-tags span,
+body.light .exp-case-tag,
+body.light .proj-tag,
+body.light .writing-read,
+body.light .app-dock,
+body.light .marquee-item {
+  background: rgba(250,252,255,0.84);
+  border-color: rgba(127,143,163,0.34);
+  color: #526174;
+}
+body.light .hero-action.primary {
+  background: linear-gradient(135deg, #183f9e, #2453c6 56%, #0e6f68);
+  color: #ffffff;
+  box-shadow: 0 18px 38px rgba(36,83,198,0.24);
+}
+body.light .project-filter.active,
+body.light .writing-filter.active,
+body.light .project-filter:hover,
+body.light .writing-filter:hover,
+body.light .faq-action:hover,
+body.light .hero-action:hover {
+  border-color: rgba(36,83,198,0.34);
+  background: rgba(239,245,255,0.92);
+  color: #183f9e;
+}
+body.light .section-title,
+body.light .contact-headline,
+body.light .company-title,
+body.light .proj-name,
+body.light .story-panel-title,
+body.light .exp-case-company,
+body.light .exp-modal-title,
+body.light .project-modal-title,
+body.light .writing-title,
+body.light .now-title,
+body.light .faq-q span:first-child {
+  color: #142033;
+}
+body.light .story-panel-copy,
+body.light .story-point p,
+body.light .company-card,
+body.light .proj-desc,
+body.light .contact-sub,
+body.light .writing-summary,
+body.light .now-sub,
+body.light .faq-a-inner,
+body.light .exp-section-intro,
+body.light .exp-case-summary,
+body.light .exp-modal-sub,
+body.light .project-modal-copy,
+body.light .project-modal-note,
+body.light .project-modal-list li,
+body.light .exp-modal-list li {
+  color: #405064;
+}
+body.light .section-watermark {
+  color: rgba(20,32,51,0.045);
+}
+body.light .marquee {
+  background: linear-gradient(180deg, rgba(243,247,252,0.78), rgba(224,233,244,0.54));
+  border-color: rgba(127,143,163,0.24);
+}
+body.light #theme-toggle,
+body.light #back-to-top,
+body.light #palette-switch,
+body.light #return-visit,
+body.light #recruiter-launch,
+body.light .mobile-menu-btn {
+  background: rgba(250,252,255,0.88);
+  border-color: rgba(127,143,163,0.34);
+  color: #405064;
+  box-shadow: 0 16px 34px rgba(20,32,51,0.12);
+}
+body.light .contact-body {
+  background:
+    radial-gradient(circle at top left, rgba(36,83,198,0.085), transparent 34%),
+    radial-gradient(circle at 92% 12%, rgba(14,111,104,0.07), transparent 30%),
+    linear-gradient(180deg, rgba(250,252,255,0.95), rgba(232,239,247,0.82));
+  border-color: rgba(127,143,163,0.34);
+  box-shadow: 0 24px 58px rgba(20,32,51,0.13), inset 0 1px 0 rgba(255,255,255,0.86);
+}
+body.light .contact-body::before {
+  background: linear-gradient(135deg, rgba(36,83,198,0.18), rgba(14,111,104,0.12), rgba(180,118,31,0.1));
+}
+body.light .proj-img {
+  background: #dde6f0;
+}
+body.light .proj-img img {
+  filter: brightness(0.94) saturate(1.06) contrast(1.02);
+}
+body.light .proj-card:hover {
+  background:
+    radial-gradient(700px circle at 10% 0%, rgba(36,83,198,0.07), transparent 48%),
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(242,247,252,0.94));
+  border-color: rgba(36,83,198,0.26);
+  box-shadow: 0 24px 54px rgba(20,32,51,0.15), 0 0 0 1px rgba(36,83,198,0.08);
+}
 body.modal-open { overflow: hidden; }
 body.modal-open #section-dots,
 body.modal-open #palette-switch,
@@ -538,7 +965,7 @@ body.modal-open #section-counter {
   background: currentColor; flex-shrink: 0;
   transition: width 0.35s var(--ease);
 }
-.sidebar-nav a:hover .nav-indicator, .sidebar-nav a.active .nav-indicator { width: 52px; }
+.sidebar-nav a:hover .nav-indicator, .sidebar-nav a.active .nav-indicator { width: 38px; }
 
 /* ── SIDEBAR SOCIAL ── */
 .sidebar-social { display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
@@ -587,7 +1014,7 @@ body.modal-open #section-counter {
   position: relative; z-index: 2;
 }
 
-section { padding: 96px 0; border-bottom: 1px solid rgba(255,255,255,0.035); position: relative; }
+section { padding: 96px 0; border-bottom: none; position: relative; }
 @supports (content-visibility: auto) {
   section {
     content-visibility: auto;
@@ -597,6 +1024,7 @@ section { padding: 96px 0; border-bottom: 1px solid rgba(255,255,255,0.035); pos
 section:last-of-type { border-bottom: none; }
 section::before {
   content: '';
+  display: none;
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -606,7 +1034,7 @@ section::before {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 section.scene-live::before {
-  opacity: 0.55;
+  opacity: 0;
   transform: none;
 }
 
@@ -617,6 +1045,7 @@ section.scene-live::before {
 }
 .section-heading::after {
   content: '';
+  display: none;
   position: absolute;
   left: 0;
   bottom: -14px;
@@ -627,9 +1056,9 @@ section.scene-live::before {
   transition: opacity 0.3s, width 0.3s, transform 0.3s;
 }
 .scene-live .section-heading::after {
-  opacity: 1;
-  width: 220px;
-  transform: translateX(4px);
+  opacity: 0.8;
+  width: 140px;
+  transform: none;
 }
 .section-num {
   font-family: var(--mono); font-size: 13px;
@@ -642,7 +1071,7 @@ section.scene-live::before {
   color: var(--text); letter-spacing: -0.02em; white-space: nowrap;
   text-shadow: none;
 }
-.section-line { flex: 1; height: 1px; background: linear-gradient(90deg, color-mix(in srgb, var(--border) 72%, var(--accent) 28%), transparent); }
+.section-line { display: none; }
 /* watermark */
 .section-watermark {
   position: absolute; right: 0; top: 50%;
@@ -2579,6 +3008,7 @@ section.scene-live::before {
 #section-counter .sc-sep { color: var(--text-3); opacity: 0.5; }
 #section-counter .sc-name { color: var(--text-2); text-transform: uppercase; }
 #section-counter .sc-bar {
+  display: none;
   width: 40px; height: 2px; border-radius: 2px;
   background: var(--bg-3); overflow: hidden; position: relative;
 }
@@ -3848,6 +4278,7 @@ body[data-accent="amber"] {
 ═══════════════════════════════════════ */
 #progress-bar {
   position: fixed; top: 0; left: 0;
+  display: none;
   height: 2px; width: 0%;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   z-index: 200; transition: width 0.06s linear;
@@ -4276,7 +4707,12 @@ body[data-theme="light"] .mini-term { background: #f6f8fa; }
   border-color: var(--accent);
   background: var(--bg-2);
 }
-body.light #recruiter-launch { background: rgba(255,255,255,0.9); }
+body.light #recruiter-launch {
+  background: rgba(250,252,255,0.88);
+  border-color: rgba(127,143,163,0.34);
+  color: #183f9e;
+  box-shadow: 0 16px 34px rgba(20,32,51,0.12);
+}
 #recruiter-backdrop {
   position: fixed;
   inset: 0;
@@ -4759,11 +5195,311 @@ body.light .timeline-side,
 body.light .terminal-chip,
 body.light .terminal-shell,
 body.light #return-visit {
-  background: rgba(255,255,255,0.96);
+  background:
+    linear-gradient(180deg, rgba(250,252,255,0.92), rgba(231,238,247,0.78));
+  border-color: rgba(127,143,163,0.32);
+  box-shadow: 0 14px 34px rgba(20,32,51,0.09), 0 1px 0 rgba(255,255,255,0.76) inset;
 }
 body.light .project-orbit-card,
 body.light .project-orbit-card {
-  background: rgba(255,255,255,0.92);
+  background:
+    linear-gradient(180deg, rgba(250,252,255,0.92), rgba(231,238,247,0.78));
+  border-color: rgba(127,143,163,0.32);
+  box-shadow: 0 14px 34px rgba(20,32,51,0.09), 0 1px 0 rgba(255,255,255,0.76) inset;
+}
+
+/* Final premium light theme layer. */
+body.light {
+  --bg: #e9eef5;
+  --bg-2: #f8fafc;
+  --bg-3: #dfe7f0;
+  --border: #bdc9d8;
+  --text: #111c2f;
+  --text-2: #3f4f64;
+  --text-3: #6d7a8f;
+  --accent: #1f4fbf;
+  --accent-2: #0b6b63;
+  --accent-rgb: 31,79,191;
+  --accent-dim: rgba(31,79,191,0.095);
+  --accent-border: rgba(31,79,191,0.28);
+  --green: #0f7b58;
+  background:
+    radial-gradient(1100px circle at 4% 0%, rgba(31,79,191,0.16), transparent 38%),
+    radial-gradient(820px circle at 100% 10%, rgba(11,107,99,0.13), transparent 35%),
+    linear-gradient(180deg, #f7f9fc 0%, #e9eef5 48%, #dde6ef 100%);
+}
+body.light::before {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.48), transparent 22%, transparent 78%, rgba(31,79,191,0.035)),
+    radial-gradient(980px circle at 50% -14%, rgba(255,255,255,0.72), transparent 48%);
+}
+body.light::after {
+  opacity: 0.008;
+}
+body.light .content {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.14), transparent 18%, transparent 82%, rgba(255,255,255,0.1));
+}
+body.light .sidebar {
+  background:
+    linear-gradient(180deg, rgba(251,253,255,0.96), rgba(231,238,247,0.95)),
+    radial-gradient(420px circle at 22% 8%, rgba(31,79,191,0.11), transparent 46%);
+  border-right-color: rgba(104,121,145,0.28);
+  box-shadow: 22px 0 54px rgba(17,28,47,0.1);
+}
+body.light .sidebar::before {
+  border-color: rgba(104,121,145,0.16);
+}
+body.light .sidebar::after {
+  background:
+    radial-gradient(420px circle at 16% 10%, rgba(31,79,191,0.12), transparent 42%),
+    linear-gradient(180deg, transparent 28%, rgba(11,107,99,0.045), transparent 78%);
+  opacity: 0.7;
+}
+body.light .sidebar-name {
+  background: linear-gradient(135deg, #111c2f 4%, #1f4fbf 56%, #0b6b63 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .sidebar-nav a.active,
+body.light .sidebar-nav a:hover {
+  color: #111c2f;
+}
+body.light .nav-indicator {
+  background: linear-gradient(90deg, #1f4fbf, #0b6b63);
+  opacity: 0.9;
+}
+body.light .hero-panel,
+body.light .hero-signal-wall,
+body.light .story-lens,
+body.light .company-card,
+body.light .exp-case-card,
+body.light .proj-card,
+body.light .service-card,
+body.light .now-card,
+body.light .faq-item,
+body.light .writing-item,
+body.light #cmd-palette,
+body.light #shortcuts-panel,
+body.light #qr-panel,
+body.light #recruiter-panel,
+body.light #exp-modal-panel,
+body.light #project-modal-panel,
+body.light #tldr-panel {
+  background:
+    radial-gradient(720px circle at 8% -8%, rgba(31,79,191,0.07), transparent 46%),
+    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(239,245,251,0.9));
+  border-color: rgba(104,121,145,0.32);
+  box-shadow:
+    0 28px 70px rgba(17,28,47,0.14),
+    0 1px 0 rgba(255,255,255,0.82) inset;
+}
+body.light .hero-panel,
+body.light .story-lens,
+body.light .hero-signal-wall,
+body.light .contact-body {
+  border-radius: 22px;
+}
+body.light .exp-case-card,
+body.light .proj-card,
+body.light .service-card,
+body.light .faq-item,
+body.light .now-card,
+body.light .company-card {
+  border-radius: 14px;
+}
+body.light .hero-panel::before,
+body.light .hero-panel::after,
+body.light .story-lens::before,
+body.light .hero-signal-wall::after {
+  opacity: 0.12;
+}
+body.light .hero-proof-card,
+body.light .hero-signal,
+body.light .story-panel,
+body.light .story-point,
+body.light .exp-case-metric,
+body.light .project-modal-card,
+body.light .exp-modal-card,
+body.light .stack-row,
+body.light .availability-board,
+body.light .mini-term,
+body.light .contact-cta,
+body.light .timeline-lab,
+body.light .timeline-card,
+body.light .timeline-side,
+body.light .terminal-chip,
+body.light .terminal-shell,
+body.light #return-visit,
+body.light .project-orbit-card {
+  background:
+    linear-gradient(180deg, rgba(250,252,255,0.9), rgba(225,235,245,0.76));
+  border-color: rgba(104,121,145,0.3);
+  box-shadow: 0 16px 38px rgba(17,28,47,0.09), 0 1px 0 rgba(255,255,255,0.78) inset;
+}
+body.light .section-title,
+body.light .contact-headline,
+body.light .company-title,
+body.light .proj-name,
+body.light .story-panel-title,
+body.light .exp-case-company,
+body.light .exp-modal-title,
+body.light .project-modal-title,
+body.light .writing-title,
+body.light .now-title,
+body.light .faq-q span:first-child,
+body.light .timeline-title {
+  color: #111c2f;
+  letter-spacing: -0.035em;
+}
+body.light .section-num,
+body.light .hero-kicker,
+body.light .story-kicker,
+body.light .project-kicker,
+body.light .timeline-lab-kicker,
+body.light .terminal-kicker,
+body.light .service-kicker,
+body.light .now-label,
+body.light .writing-date,
+body.light .proj-num,
+body.light .exp-case-year,
+body.light .timeline-year {
+  color: #1f4fbf;
+}
+body.light .story-panel-copy,
+body.light .story-point p,
+body.light .company-card,
+body.light .proj-desc,
+body.light .contact-sub,
+body.light .writing-summary,
+body.light .now-sub,
+body.light .faq-a-inner,
+body.light .exp-section-intro,
+body.light .exp-case-summary,
+body.light .timeline-sub,
+body.light .terminal-note,
+body.light .timeline-points li,
+body.light .compare-list li,
+body.light .exp-modal-sub,
+body.light .project-modal-copy,
+body.light .project-modal-note,
+body.light .project-modal-list li,
+body.light .exp-modal-list li {
+  color: #3f4f64;
+}
+body.light .project-filter,
+body.light .writing-filter,
+body.light .faq-action,
+body.light .project-count,
+body.light .writing-action,
+body.light .hero-meta-chip,
+body.light .hero-action,
+body.light .role-chip,
+body.light .recruiter-action,
+body.light .share-btn,
+body.light .availability-picker,
+body.light .timeline-tab,
+body.light .story-chip,
+body.light .exp-modal-stage-tags span,
+body.light .project-modal-tags span,
+body.light .exp-case-tag,
+body.light .proj-tag,
+body.light .writing-read,
+body.light .app-dock,
+body.light .marquee-item,
+body.light .kbd {
+  background: rgba(249,251,254,0.78);
+  border-color: rgba(104,121,145,0.3);
+  color: #506178;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.72) inset;
+}
+body.light .project-filter.active,
+body.light .writing-filter.active,
+body.light .timeline-tab.active,
+body.light .story-chip.active,
+body.light .project-filter:hover,
+body.light .writing-filter:hover,
+body.light .timeline-tab:hover,
+body.light .story-chip:hover,
+body.light .faq-action:hover,
+body.light .hero-action:hover {
+  background: linear-gradient(180deg, rgba(239,245,255,0.98), rgba(224,234,247,0.86));
+  border-color: rgba(31,79,191,0.36);
+  color: #173f99;
+  box-shadow: 0 12px 26px rgba(31,79,191,0.12);
+}
+body.light .hero-action.primary,
+body.light .contact-cta.primary {
+  background: linear-gradient(135deg, #173f99, #1f4fbf 58%, #0b6b63);
+  color: #ffffff;
+  border-color: rgba(31,79,191,0.42);
+  box-shadow: 0 20px 44px rgba(31,79,191,0.25);
+}
+body.light .proj-card:hover,
+body.light .exp-case-card:hover,
+body.light .service-card:hover,
+body.light .faq-item.open {
+  transform: translateY(-3px);
+  background:
+    radial-gradient(760px circle at 8% -8%, rgba(31,79,191,0.09), transparent 46%),
+    linear-gradient(180deg, rgba(255,255,255,0.97), rgba(237,244,251,0.94));
+  border-color: rgba(31,79,191,0.28);
+  box-shadow: 0 30px 72px rgba(17,28,47,0.16), 0 0 0 1px rgba(31,79,191,0.06);
+}
+body.light .proj-img {
+  background: linear-gradient(135deg, #d4deeb, #eef3f8);
+  box-shadow: inset 0 0 0 1px rgba(104,121,145,0.18);
+}
+body.light .proj-img img {
+  filter: brightness(0.95) saturate(1.08) contrast(1.03);
+}
+body.light .writing-item {
+  border-top-color: rgba(104,121,145,0.22);
+  padding-inline: 18px;
+}
+body.light .writing-item:hover {
+  background:
+    linear-gradient(90deg, rgba(31,79,191,0.06), rgba(255,255,255,0.62), transparent);
+}
+body.light .contact-body {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(31,79,191,0.1), transparent 34%),
+    radial-gradient(circle at 90% 12%, rgba(11,107,99,0.09), transparent 30%),
+    linear-gradient(180deg, rgba(252,253,255,0.96), rgba(229,238,247,0.86));
+  border-color: rgba(104,121,145,0.32);
+  box-shadow: 0 32px 76px rgba(17,28,47,0.15), inset 0 1px 0 rgba(255,255,255,0.84);
+}
+body.light .contact-body::before {
+  background: linear-gradient(135deg, rgba(31,79,191,0.2), rgba(11,107,99,0.13), rgba(183,128,41,0.11));
+}
+body.light .marquee {
+  background: linear-gradient(180deg, rgba(238,244,250,0.86), rgba(216,227,239,0.64));
+  border-color: rgba(104,121,145,0.22);
+}
+body.light #theme-toggle,
+body.light #back-to-top,
+body.light #palette-switch,
+body.light #return-visit,
+body.light #recruiter-launch,
+body.light .mobile-menu-btn {
+  background: rgba(250,252,255,0.88);
+  border-color: rgba(104,121,145,0.32);
+  color: #3f4f64;
+  box-shadow: 0 18px 42px rgba(17,28,47,0.13);
+}
+body.light .palette-dot.active {
+  border-color: #111c2f;
+  box-shadow: 0 0 0 3px rgba(31,79,191,0.12), 0 10px 22px rgba(17,28,47,0.12);
+}
+body.light .section-watermark {
+  color: rgba(17,28,47,0.038);
+}
+body.light .site-footer,
+body.light .exp-modal-head,
+body.light .project-modal-head,
+body.light .contact-classic-note {
+  border-color: rgba(104,121,145,0.22);
 }
 @media (max-width: 1100px) {
   .impact-grid,
@@ -6294,16 +7030,10 @@ function setCurrentSection(current, idx) {
     secCurEl.textContent = String(idx + 1).padStart(2,'0');
     secNameEl.textContent = secNames[current] || '';
   }
-  document.body.setAttribute('data-scene', current);
   if (current !== lastScene) {
     lastScene = current;
     try { localStorage.setItem('last-section', current); } catch(_) {}
     if (typeof window.__updateReturnVisit === 'function') window.__updateReturnVisit(current);
-    if (portalVeil) {
-      portalVeil.classList.add('flash');
-      clearTimeout(window.__portalTimer);
-      window.__portalTimer = setTimeout(() => portalVeil.classList.remove('flash'), 240);
-    }
   }
 }
 
